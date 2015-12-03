@@ -1,0 +1,627 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{apjfonts}
+
+\definecolor{slateblue}{RGB}{17, 83,128}
+\usepackage{doi}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\paperfontsize 12
+\spacing other 1.05
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=slateblue,citecolor=slateblue,linkcolor=slateblue"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Does genomic imprinting affect sexual maturation?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/bram/Projects/databases/transgenerational"
+options "bram"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{equation}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+theequation{S
+\backslash
+arabic{equation}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thesection{S
+\backslash
+arabic{section}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thefigure{S
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+thetable{S
+\backslash
+arabic{table}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\size large
+Supplementary Information to:
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\lang british
+Genomic imprinting and sexual maturation
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+
+\lang british
+Bram Kuijper & Rufus A.
+ Johnstone
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Fitness expressions female age at maturity
+\end_layout
+
+\begin_layout Standard
+We track the expected number 
+\begin_inset Formula $w_{ij}$
+\end_inset
+
+ of successfully established offspring of sex 
+\begin_inset Formula $i$
+\end_inset
+
+ that are born from a parent of sex 
+\begin_inset Formula $j$
+\end_inset
+
+ that bears the mutant 
+\begin_inset Formula $s_{\mathrm{f}}$
+\end_inset
+
+-allele:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\\
+w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\\
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Fitness expressions male age at maturity
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}\\
+w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{i}\right)}{n_{\mathrm{f}}\left[\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{jmf}}\right)+d_{\mathrm{m}}s\left(a_{\mathrm{m}}\right)\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a_{\mathrm{m}}^{i}\right)}{n_{\mathrm{f}}s\left(a_{\mathrm{m}}\right)}\right]\\
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{i}\right)}{n_{\mathrm{f}}\left[\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{jmm}}\right)+d_{\mathrm{m}}s\left(a_{\mathrm{m}}\right)\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a_{\mathrm{m}}^{i}\right)}{n_{\mathrm{f}}s\left(a_{\mathrm{m}}\right)}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Selection gradients
+\end_layout
+
+\begin_layout Standard
+Expressions for female and male fitnesses are then given by
+\begin_inset Formula 
+\begin{align*}
+w_{\mathrm{f}} & =\frac{v_{\mathrm{m}}}{v_{\mathrm{f}}}w_{\mathrm{mf}}+w_{\mathrm{ff}}\\
+w_{\mathrm{m}} & =\frac{v_{\mathrm{f}}}{v_{\mathrm{m}}}w_{\mathrm{fm}}+w_{\mathrm{mm}}.
+\end{align*}
+
+\end_inset
+
+We then derive selection gradients that determine the rate of evolutionary
+ change in 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ using a direct fitness approach (also called neighbour-modulated fitness)
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hamilton1964a,Taylor1996,Rousset2004,Taylor2007"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{f}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{i}}r_{i\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{ff}}}r_{\mathrm{f\rightarrow f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{jff}}}r_{\mathrm{f}\rightarrow\mathrm{fjuv}}\right)+c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{fm}}}r_{\mathrm{f\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{jfm}}}r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\label{eq:selgrad:af}\\
+\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{m}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{jfm}}}r_{\mathrm{f}\rightarrow\mathrm{mjuv}}\right)+c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{mm}}}r_{\mathrm{m\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmm}}}r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)\label{eq:selgrad:am}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+ indicates relatedness between the bearer of the focal allele and itself,
+ 
+\begin_inset Formula $r_{\mathrm{f\rightarrow f}}$
+\end_inset
+
+ reflects relatedness between two adult females sampled randomly with replacemen
+t from the same patch, 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{m}}$
+\end_inset
+
+ the relatedness between an adult female and an adult male from the same
+ patch 
+\end_layout
+
+\begin_layout Subsection
+Relatedness coefficients for diplodiploidy
+\end_layout
+
+\begin_layout Standard
+The coefficient of consanguinity 
+\begin_inset Formula $Q_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{\mathrm{m}}$
+\end_inset
+
+ between two randomly sampled allele copys in the same female or male individual
+ is given by
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:Qf}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $h_{\mathrm{f}}=1-d_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{\mathrm{m}}=1-d_{\mathrm{m}}$
+\end_inset
+
+ are the probabilities juvenile females and males stay in their natal patch.
+ 
+\begin_inset Formula $Q_{\mathrm{fm}}$
+\end_inset
+
+ reflects the coefficient of consanguinity between an adult female and male
+ that are randomly sampled in the local patch.
+ To calculate 
+\begin_inset Formula $Q_{\mathrm{fm}}$
+\end_inset
+
+ we need to derive expressions for the coefficients of consanguinity between
+ juveniles
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{\mathrm{j}} & =Q_{\mathrm{fm}}^{\mathrm{j}}=Q_{\mathrm{mf}}^{\mathrm{j}}=Q_{\mathrm{mm}}^{\mathrm{j}}=\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:QffJ}
+\end{align}
+
+\end_inset
+
+We then have
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qff}\\
+Q_{\mathrm{fm}} & =Q_{\mathrm{mf}}=h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qfm}\\
+Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}}.\label{eq:relatedness:diploid:Qmm}
+\end{align}
+
+\end_inset
+
+Following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Michod1980"
+
+\end_inset
+
+ relatedness coefficients are then given by
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:ri}\\
+r_{\mathrm{f\rightarrow f}} & =\hat{Q}_{\mathrm{ff}},\ r_{\mathrm{f}\rightarrow\mathrm{m}}=\hat{Q}_{\mathrm{fm}},r_{\mathrm{m}\rightarrow\mathrm{m}}=\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:diploid:rff}\\
+r_{\mathrm{f}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{f}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rffjuv}\\
+r_{\mathrm{m}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{m}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rmfjuv}
+\end{align}
+
+\end_inset
+
+where hats denote equilibrium solutions to the recursions in eqns.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:Qf"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:Qmm"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Maternally and paternally inherited alleles (genomic imprinting)
+\end_layout
+
+\begin_layout Standard
+When considering genomic imprinting, relatedness is considered from the
+ perspective of a maternally or paternally inherited allele.
+ The coefficient of consanguinity of the focal individual to itself is the
+ same through its maternally inherited (MI) and paternally inherited (PI)
+ gene copy, so that expressions for 
+\begin_inset Formula $Q_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{\mathrm{m}}$
+\end_inset
+
+ are unchanged relative to eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:Qf"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The coefficient of consanguinity between the focal juvenile individual and
+ another juvenile female or male individual via the maternally and paternally
+ inherited allele copy is
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{\mathrm{jMI}} & =Q_{\mathrm{fm}}^{\mathrm{jMI}}=Q_{\mathrm{mf}}^{\mathrm{jMI}}=Q_{\mathrm{mm}}^{\mathrm{jMI}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatdness:diploid:QffjMI}\\
+Q_{\mathrm{ff}}^{\mathrm{jPI}} & =Q_{\mathrm{fm}}^{\mathrm{jPI}}=Q_{\mathrm{mf}}^{\mathrm{jPI}}=Q_{\mathrm{mm}}^{\mathrm{jPI}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:diploid:QffjPI}
+\end{align}
+
+\end_inset
+
+while coefficients of consanguinity between adults for an allele which is
+ inherited according to mode 
+\begin_inset Formula $x$
+\end_inset
+
+ (either 
+\begin_inset Formula $x=\mathrm{PI}$
+\end_inset
+
+ or 
+\begin_inset Formula $x=\mathrm{MI}$
+\end_inset
+
+) are given by 
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{x} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}x}\label{eq:relatedness:diploid:Qffx}\\
+Q_{\mathrm{fm}}^{x} & =h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}x}\label{eq:relatedness:diploid:Qfmx}\\
+Q_{\mathrm{mm}}^{x} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}x}.\label{eq:relatedness:diploid:Qmmx}
+\end{align}
+
+\end_inset
+
+These coefficients of consanguinity can then be substituted in the equations
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:ri"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:rmfjuv"
+
+\end_inset
+
+) for the respective relatedness coefficients.
+\end_layout
+
+\begin_layout Subsection
+Relatedness coefficients for haplodiploidy and X-linked geness
+\end_layout
+
+\begin_layout Standard
+We have
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{f}} & =\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right),\ Q_{\mathrm{m}}=1,\label{eq:relatedness:haplodiploid:Qf}
+\end{align}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{\mathrm{j}} & =\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right)\label{eq:relatedness:haplodiploid:Qffj}\\
+Q_{\mathrm{fm}}^{\mathrm{j}} & =Q_{\mathrm{mf}}^{\mathrm{j}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:Qfmj}\\
+Q_{\mathrm{mm}}^{\mathrm{j}} & =\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}},\label{eq:relatedness:haplodiploid:Qmmj}
+\end{align}
+
+\end_inset
+
+while adult coefficients of consanguinity are then given by eqns.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:Qff"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:Qmm"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Maternally inherited alleles (genomic imprinting)
+\end_layout
+
+\begin_layout Standard
+We have
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right),\ Q_{\mathrm{m}}^{\mathrm{MI}}=1\label{eq:relatedness:haplodiploid:QfMI}
+\end{align}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{\mathrm{jMI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:QffjMI}\\
+Q_{\mathrm{mf}}^{\mathrm{jMI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:QmfjMI}\\
+Q_{\mathrm{mm}}^{\mathrm{jMI}} & =Q_{\mathrm{fm}}^{\mathrm{j}\mathrm{MI}}=\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}.\label{eq:relatedness:haplodiploid:QfmjMI}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
