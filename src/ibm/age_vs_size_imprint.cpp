@@ -27,7 +27,7 @@ const size_t Npatches = 1000;
 const size_t Nfp = 5; // females per patch
 const size_t Nmp = 5; // males per patch
 const size_t numgen = 30000;
-const size_t Clutch = 100;
+const size_t Clutch = 500;
 
 // mutation rates
 double mu = 0;
@@ -44,6 +44,8 @@ bool diploid = false;
 // tally of dispersers
 size_t NdispF = 0;
 size_t NdispM = 0;
+size_t NsurvM = 0;
+size_t NsurvF = 0;
 
 // runtime for stats
 time_t total_time; 
@@ -70,10 +72,10 @@ struct Patch
     Individual localsM[Nmp]; // all the local male breeders
 
     // philopatric female offspring
-    Individual philsF[Nfp * Clutch * 5];     
+    Individual philsF[Nfp * Clutch];     
 
     // philopatric male offspring
-    Individual philsM[Nfp * Clutch * 5];     
+    Individual philsM[Nfp * Clutch];     
 
     // (note that dispersing offspring
     // ends up in global pool, see below)
@@ -94,8 +96,8 @@ struct Patch
 
 // generate the complete population
 Patch MetaPop[Npatches];
-Individual DispersersF[Npatches * Nfp * Clutch * 5];
-Individual DispersersM[Npatches * Nfp * Clutch * 5];
+Individual DispersersF[Npatches * Nfp * Clutch];
+Individual DispersersM[Npatches * Nfp * Clutch];
 
 // give the outputfile a unique name
 // by using the create_filename function (see 
@@ -145,20 +147,20 @@ void init_pop()
         for (size_t j = 0; j < Nfp; ++j)
         {
             // initialize phenotypes
-            MetaPop[i].localsF[j].af[0] = 3.0;
-            MetaPop[i].localsF[j].af[1] = 3.0;
-            MetaPop[i].localsF[j].am[0] = 1.5;
-            MetaPop[i].localsF[j].am[1] = 1.5;
+            MetaPop[i].localsF[j].af[0] = 1.5;
+            MetaPop[i].localsF[j].af[1] = 1.5;
+            MetaPop[i].localsF[j].am[0] = 0.75;
+            MetaPop[i].localsF[j].am[1] = 0.75;
             MetaPop[i].localsF[j].phen = 3.0;
         }
         
         for (size_t j = 0; j < Nmp; ++j)
         {
             // initialize phenotypes
-            MetaPop[i].localsM[j].af[0] = 3.0;
-            MetaPop[i].localsM[j].af[1] = 3.0;
-            MetaPop[i].localsM[j].am[0] = 1.5;
-            MetaPop[i].localsM[j].am[1] = 1.5;
+            MetaPop[i].localsM[j].af[0] = 1.5;
+            MetaPop[i].localsM[j].af[1] = 1.5;
+            MetaPop[i].localsM[j].am[0] = 0.75;
+            MetaPop[i].localsM[j].am[1] = 0.75;
             MetaPop[i].localsM[j].phen = 1.5;
         }
     }
@@ -199,6 +201,7 @@ void Create_Kid(Individual &mother, Individual &father, Individual &Kid, bool is
         paternal_allele_f = gsl_rng_uniform_int(r,2);
         Kid.af[1] = Mut(father.af[paternal_allele_f]);
 
+        // if female, determine phenotype
         if (is_female)
         {
             switch(type)
@@ -292,6 +295,9 @@ void make_juveniles()
     NdispF = 0;
     NdispM = 0;
 
+    NsurvM = 0;
+    NsurvF = 0;
+
     // variable to calculate clutch size;
     double exact_clutch;
     size_t clutch_size;
@@ -358,6 +364,7 @@ void make_juveniles()
                 ++clutch_size;
             }
 
+
             // create kids and reduce parental resources
             for (size_t k = 0; k < clutch_size; ++k)
             {
@@ -367,12 +374,15 @@ void make_juveniles()
 
                 Create_Kid(MetaPop[i].localsF[j],MetaPop[i].localsM[father],Kid, is_female);
 
+    
+                
                 // juvenile survival
                 if (gsl_rng_uniform(r) < exp(-q * Kid.phen))
                 {
                     // female or male
                     if (is_female)
                     {
+                        ++NsurvF;
                         // dispersal or not
                         if (gsl_rng_uniform(r) < df)
                         {                            
@@ -385,6 +395,7 @@ void make_juveniles()
                     }
                     else
                     {
+                        ++NsurvM;
                         // dispersal or not
                         if (gsl_rng_uniform(r) < dm)
                         {                            
@@ -445,6 +456,7 @@ void replace_adults()
 
         for (size_t j = 0; j < Nfp; ++j)
         {
+            //cout << arriving_immigrantsF << " " << MetaPop[i].NkidsF << endl;
             assert((double) arriving_immigrantsF / (arriving_immigrantsF + MetaPop[i].NkidsF) >= 0.0 
                     && (double) arriving_immigrantsF / (arriving_immigrantsF + MetaPop[i].NkidsF) <= 1.0);
             
@@ -467,6 +479,7 @@ void replace_adults()
         
         for (size_t j = 0; j < Nmp; ++j)
         {
+            //cout << seed << " gen: " << generation << " patch: " << i << " nmp: " << j << " nkidsM: " << MetaPop[i].NkidsM << " ndispM: " << NdispM << " nsurvM: " << NsurvM <<  " " << NsurvF << endl;
             assert((double) arriving_immigrantsM / (arriving_immigrantsM + MetaPop[i].NkidsM) >= 0.0 
                     && (double) arriving_immigrantsM / (arriving_immigrantsM + MetaPop[i].NkidsM) <= 1.0);
 
