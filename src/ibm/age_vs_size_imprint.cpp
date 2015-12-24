@@ -28,9 +28,8 @@ gsl_rng *r; // gnu scientific rng
 const size_t Npatches = 1000; 
 const size_t Nfp = 5; // females per patch
 const size_t Nmp = 5; // males per patch
-const size_t numgen = 30000;
-const size_t Clutch = 320;
-const size_t max_clutch = 500;
+const size_t numgen = 20000;
+const size_t Clutch = 50;
 
 // mutation rates
 double mu = 0;
@@ -122,7 +121,7 @@ void init_pop()
     total_time = time(NULL);
 
     // obtain a seed from current nanosecond count
-	seed = get_nanoseconds();
+	seed = 300; //get_nanoseconds();
     // set the seed to the random number generator
     // stupidly enough, this can only be done by setting
     // a shell environment parameter
@@ -147,6 +146,7 @@ void init_pop()
             MetaPop[i].localsF[j].am[0] = 3.0;
             MetaPop[i].localsF[j].am[1] = 3.0;
             MetaPop[i].localsF[j].phen = 3.0;
+            MetaPop[i].localsF[j].is_female = true;
         }
         
         for (size_t j = 0; j < Nmp; ++j)
@@ -157,6 +157,7 @@ void init_pop()
             MetaPop[i].localsM[j].am[0] = 3.0;
             MetaPop[i].localsM[j].am[1] = 3.0;
             MetaPop[i].localsM[j].phen = 3.0;
+            MetaPop[i].localsM[j].is_female = false;
         }
     }
 }
@@ -182,6 +183,7 @@ double Mut(double allele)
 void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is_female)
 {
     Kid.phen = -1;
+    Kid.is_female = is_female;
 
     // first inherit af
     
@@ -238,7 +240,7 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
         }
     }
 
-    assert(Kid.phen > 0);
+    assert(Kid.phen >= 0);
 }
 
 // mate and create kids across all patches...
@@ -247,6 +249,8 @@ void make_juveniles()
     // clear vectors
     DispersersF.clear();
     DispersersM.clear();
+
+    size_t total_offspring_produced = 0;
 
     // reset surviving individual counters
     NsurvM = 0;
@@ -291,25 +295,14 @@ void make_juveniles()
             sum_male_effort = cumul_male_effort[j];
         }
 
+        clutch_size = 0;
+        total_offspring_produced = 0;
+
         // reproduce
         for (size_t j = 0; j < Nfp; ++j)
         {
-            // select male based on his reproductive effort
-            cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
-
-            father = gsl_rng_uniform_int(r, Nmp);
-
-            for (size_t male_i = 0; male_i < Nmp; ++male_i)
-            {
-                if (cumul_deviate <= cumul_male_effort[male_i])
-                {
-                    father = male_i;
-                    break;
-                }
-            }
-
             // calculate female clutch size
-            exact_clutch = pow(k * MetaPop[i].localsF[j].phen,3) * Clutch; 
+            exact_clutch = Clutch + pow(k * MetaPop[i].localsF[j].phen,3) * Clutch; 
             clutch_size = floor(exact_clutch);
            
             // stochastic rounding
@@ -318,18 +311,37 @@ void make_juveniles()
                 ++clutch_size;
             }
 
+
             // create kids and reduce parental resources
-            for (size_t k = 0; k < clutch_size; ++k)
+            for (size_t egg_i = 0; egg_i < clutch_size; ++egg_i)
             {
+                // select male based on his reproductive effort
+                cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
+
+                father = 1000;
+
+                for (size_t male_i = 0; male_i < Nmp; ++male_i)
+                {
+                    if (cumul_deviate <= cumul_male_effort[male_i])
+                    {
+                        father = male_i;
+                        break;
+                    }
+                }
+
+                assert(father >= 0 && father < Nmp);
+
                 Individual Kid; 
 
                 is_female = gsl_rng_uniform(r) < 0.5;
 
                 create_kid(MetaPop[i].localsF[j],MetaPop[i].localsM[father],Kid, is_female);
 
+
                 // female or male
                 if (is_female)
                 {
+                    ++NsurvF;
                     // dispersal or not
                     if (gsl_rng_uniform(r) < df)
                     {                            
@@ -344,10 +356,8 @@ void make_juveniles()
                 }
                 else
                 {
-//                        if (generation == 1475)
-//                        {
-//                            cout << i << " " << k << " " << NdispM << " " << MetaPop[i].NkidsM << " " << endl;
-//                        }
+                    ++total_offspring_produced; 
+                    ++NsurvM;
                     // dispersal or not
                     if (gsl_rng_uniform(r) < dm)
                     {                            
@@ -361,9 +371,14 @@ void make_juveniles()
                     }
                 }
             } // end clutch
+
+            if (MetaPop[i].philsM.size() < Nmp)
+            {
+                cout << MetaPop[i].philsM.size() << " " << MetaPop[i].philsF.size() << " " << total_offspring_produced << " " << MetaPop[i].localsF[Nfp-1].phen << " " << clutch_size << endl;
+            }
         } // end Nfp
-        //cout << MetaPop[i].philsM.size() << " " <<  MetaPop[i].philsF.size() << endl;       
     }//Npatches
+
 }
 
 // replacement of adults with juveniles
@@ -390,6 +405,10 @@ void replace_adults()
     }
 
     size_t random_ind;
+
+    double rand_deviate;
+
+    bool new_breeder_chosen = false;
     
     // now replace local breeders on each patch
     for (size_t i = 0; i < Npatches; ++i)
@@ -409,54 +428,143 @@ void replace_adults()
 
         for (size_t j = 0; j < Nfp; ++j)
         {
-            // first make cumulative distribution of female immigrants and philopatric individuals
+            assert(arriving_immigrantsF + MetaPop[i].philsF.size() > 0);
+            // make cumulative distribution of female immigrants and philopatric individuals
+            double cumul_dist[arriving_immigrantsF + MetaPop[i].philsF.size()];
+            size_t immigrant_id[arriving_immigrantsF];
+            double sum_juv = 0;
+            size_t juv_i = 0;
+            size_t phil_i = 0;
 
-
-        for (size_t j = 0; j < Nfp; ++j)
-        {
-            assert((double) arriving_immigrantsF / (arriving_immigrantsF + MetaPop[i].philsF.size()) >= 0.0 
-                    && (double) arriving_immigrantsF / (arriving_immigrantsF + MetaPop[i].philsF.size()) <= 1.0);
-            
-            if (gsl_rng_uniform(r) < (double) arriving_immigrantsF / (arriving_immigrantsF + MetaPop[i].philsF.size()))
+            // first work through the immigrant offspring
+            for (; juv_i < arriving_immigrantsF; ++juv_i)
             {
+                // draw a random immigrant
                 random_ind = gsl_rng_uniform_int(r,DispersersF.size());
-                MetaPop[i].localsF[j] = DispersersF[random_ind];
-                DispersersF[random_ind] = DispersersF.back();
-                DispersersF.pop_back();
-                --arriving_immigrantsF;
+                immigrant_id[juv_i] = random_ind;
+                assert(DispersersF[random_ind].phen >= 0 && DispersersF[random_ind].phen <= 100);
+//                assert(DispersersF[random_ind].phen == .5 * (DispersersF[random_ind].af[0] + DispersersF[random_ind].af[1]));
+                cumul_dist[juv_i] = sum_juv + exp(-q * DispersersF[random_ind].phen);
+                sum_juv = cumul_dist[juv_i];
             }
-            else
+
+            // then work through the philopatric offspring
+            for (; juv_i < arriving_immigrantsF + MetaPop[i].philsF.size(); ++juv_i)
             {
-                random_ind = gsl_rng_uniform_int(r, MetaPop[i].philsF.size());
-                MetaPop[i].localsF[j] = MetaPop[i].philsF[random_ind];
-                MetaPop[i].philsF[random_ind] = MetaPop[i].philsF.back();
-                MetaPop[i].philsF.pop_back();
+                phil_i = juv_i - arriving_immigrantsF;
+
+                assert(phil_i >= 0 && phil_i < MetaPop[i].philsF.size());
+                assert(MetaPop[i].philsF[phil_i].phen >= 0 && MetaPop[i].philsF[phil_i].phen <= 100);
+//                assert(MetaPop[i].philsF[phil_i].phen == .5 * (MetaPop[i].philsF[phil_i].af[0] + MetaPop[i].philsF[phil_i].af[1]));
+                cumul_dist[juv_i] = sum_juv + exp(-q * MetaPop[i].philsF[phil_i].phen);
+                sum_juv = cumul_dist[juv_i];
             }
+
+            // finally, choose the individual
+            rand_deviate = sum_juv * gsl_rng_uniform(r);
+
+            new_breeder_chosen = false;
+
+            for (juv_i = 0; juv_i < arriving_immigrantsF + MetaPop[i].philsF.size(); ++juv_i)
+            {
+                if (rand_deviate <= cumul_dist[juv_i])
+                {
+                    if (juv_i < arriving_immigrantsF)
+                    {
+                        assert(arriving_immigrantsF > 0);
+                        assert(immigrant_id[juv_i] >= 0 && immigrant_id[juv_i] < DispersersF.size());
+                        MetaPop[i].localsF[j] = DispersersF[immigrant_id[juv_i]];
+                        DispersersF[immigrant_id[juv_i]] = DispersersF.back();
+                        DispersersF.pop_back();
+                        --arriving_immigrantsF;
+                    }
+                    else
+                    {
+                        assert(MetaPop[i].philsF.size() > 0);
+                        phil_i = juv_i - arriving_immigrantsF;
+                        assert(phil_i >= 0 && phil_i < MetaPop[i].philsF.size());
+                        MetaPop[i].localsF[j] = MetaPop[i].philsF[phil_i];
+                        MetaPop[i].philsF[phil_i] = MetaPop[i].philsF.back();
+                        MetaPop[i].philsF.pop_back();
+                    }
+                    new_breeder_chosen = true;
+                    break;
+                }
+            }
+            assert(new_breeder_chosen);
         }
         
         for (size_t j = 0; j < Nmp; ++j)
         {
-            assert((double) arriving_immigrantsM / (arriving_immigrantsM + MetaPop[i].philsM.size()) >= 0.0 
-                    && (double) arriving_immigrantsM / (arriving_immigrantsM + MetaPop[i].philsM.size()) <= 1.0);
+            assert(arriving_immigrantsM + MetaPop[i].philsM.size() > 0);
+            // make cumulative distribution of female immigrants and philopatric individuals
+            double cumul_dist[arriving_immigrantsM + MetaPop[i].philsM.size()];
+            size_t immigrant_id[arriving_immigrantsM];
+            double sum_juv = 0;
+            size_t juv_i = 0;
+            size_t phil_i = 0;
 
-            if (gsl_rng_uniform(r) < (double) arriving_immigrantsM / (arriving_immigrantsM + MetaPop[i].philsM.size()))
+            // first work through the immigrant offspring
+            for (; juv_i < arriving_immigrantsM; ++juv_i)
             {
+                // draw a random immigrant
                 random_ind = gsl_rng_uniform_int(r,DispersersM.size());
-                MetaPop[i].localsM[j] = DispersersM[random_ind];
-                DispersersM[random_ind] = DispersersM.back();
-                DispersersM.pop_back();
-                --arriving_immigrantsM;
+                immigrant_id[juv_i] = random_ind;
+                assert(DispersersM[random_ind].phen >= 0 && DispersersM[random_ind].phen <= 100);
+//                assert(DispersersM[random_ind].phen == DispersersM[random_ind].am[0]);
+                cumul_dist[juv_i] = sum_juv + exp(-q * DispersersM[random_ind].phen);
+                sum_juv = cumul_dist[juv_i];
             }
-            else
-            {
-                random_ind = gsl_rng_uniform_int(r, MetaPop[i].philsM.size());
-                MetaPop[i].localsM[j] = MetaPop[i].philsM[random_ind];
-                MetaPop[i].philsM[random_ind] = MetaPop[i].philsM.back();
-                MetaPop[i].philsM.pop_back();
-            }
-        }
 
-        // remove all remaining female immigrants from the global dispersal pool
+            // then work through the philopatric offspring
+            for (; juv_i < arriving_immigrantsM + MetaPop[i].philsM.size(); ++juv_i)
+            {
+                phil_i = juv_i - arriving_immigrantsM;
+
+                assert(phil_i >= 0 && phil_i < MetaPop[i].philsM.size());
+
+                assert(MetaPop[i].philsM[phil_i].phen >= 0 && MetaPop[i].philsM[phil_i].phen <= 100);
+//                assert(MetaPop[i].philsM[phil_i].phen == MetaPop[i].philsM[phil_i].am[0]);
+                cumul_dist[juv_i] = sum_juv + exp(-q * MetaPop[i].philsM[phil_i].phen);
+                sum_juv = cumul_dist[juv_i];
+            }
+
+            // finally, choose the individual
+            rand_deviate = sum_juv * gsl_rng_uniform(r);
+
+            new_breeder_chosen = false;
+
+
+            for (juv_i = 0; juv_i < arriving_immigrantsM + MetaPop[i].philsM.size(); ++juv_i)
+            {
+                if (rand_deviate <= cumul_dist[juv_i])
+                {
+                    if (juv_i < arriving_immigrantsM)
+                    {
+                        assert(arriving_immigrantsM > 0);
+                        assert(immigrant_id[juv_i] >= 0 && immigrant_id[juv_i] < DispersersM.size());
+                        MetaPop[i].localsM[j] = DispersersM[immigrant_id[juv_i]];
+                        DispersersM[immigrant_id[juv_i]] = DispersersM.back();
+                        DispersersM.pop_back();
+                        --arriving_immigrantsM;
+                    }
+                    else
+                    {
+                        assert(MetaPop[i].philsM.size() > 0);
+                        phil_i = juv_i - arriving_immigrantsM;
+                        assert(phil_i >= 0 && phil_i < MetaPop[i].philsM.size());
+                        MetaPop[i].localsM[j] = MetaPop[i].philsM[phil_i];
+                        MetaPop[i].philsM[phil_i] = MetaPop[i].philsM.back();
+                        MetaPop[i].philsM.pop_back();
+                    }
+                    new_breeder_chosen = true;
+                    break;
+                }
+            }
+
+            assert(new_breeder_chosen);
+        }
+        
         for (size_t j = 0; j < arriving_immigrantsF; ++j)
         {
             random_ind = gsl_rng_uniform_int(r, DispersersF.size());
@@ -556,6 +664,7 @@ void write_parameters()
                 << "sdmu;" << sdmu << endl
                 << "q;" << q << endl
                 << "k;" << k << endl
+                << "clutch;" << Clutch << endl
                 << "runtime;" << total_time << endl;
 }
 
@@ -566,6 +675,7 @@ int main(int argc, char * argv[])
     init_pop();
 
     write_data_headers();
+
 
     for (generation = 0; generation < numgen; ++generation)
     {

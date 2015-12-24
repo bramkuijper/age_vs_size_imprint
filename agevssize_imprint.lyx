@@ -558,25 +558,19 @@ Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}}.\label{eq:rela
 
 \end_inset
 
-Following 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Michod1980"
 
-\end_inset
+\end_layout
 
- relatedness coefficients are then given by
+\begin_layout Subsubsection
+Relatedness - alleles expressed by offspring
+\end_layout
+
+\begin_layout Standard
+Identity to the focal allele within male and female adult actors is then
+ given by 
 \begin_inset Formula 
 \begin{align}
-r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:ri}\\
-r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{f}}\\
-r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{f}} & =r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}\\
-r_{\mathrm{f\rightarrow f}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:rff}\\
-r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{fm}}\\
-r_{\mathrm{m}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{mf}}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{mm}}\\
-r_{\mathrm{f}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{f}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rffjuv}\\
-r_{\mathrm{m}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{m}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:rmfjuv}
+r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:ri}
 \end{align}
 
 \end_inset
@@ -597,35 +591,67 @@ reference "eq:relatedness:diploid:Qmm"
 \end_inset
 
 ).
+ Similarly, relatedness coefficients between alleles sampled in the focal's
+ own daughters ('own juv,f') and sons ('own juv,m') (who express the focal
+ phenotype) when the focal allele is borne by the mother and father respectively
+, are given by 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}.\label{eq:relatedness:diploid:rownjuvM}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between alleles in a randomly sampled adult breeder
+ (female and male respectively) and the focal adult female breeder are given
+ by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rf->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between alleles in a randomly sampled adult breeder
+ (female and male respectively) and the focal adult male breeder are given
+ by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between alleles in a randomly sampled juvenile
+ breeder (female and male respectively) and the focal adult female breeder
+ are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rfjuvm}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between alleles in a randomly sampled juvenile
+ breeder (female and male respectively) and the focal adult male breeder
+ are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rmjuvm}
+\end{align}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Maternally and paternally inherited alleles (genomic imprinting)
-\end_layout
-
-\begin_layout Standard
-When considering genomic imprinting, relatedness is considered from the
- perspective of a maternally or paternally inherited allele.
- The coefficient of consanguinity of the focal individual to itself is the
- same through its maternally inherited (MI) and paternally inherited (PI)
- gene copy, so that expressions for 
-\begin_inset Formula $Q_{\mathrm{f}}$
-\end_inset
-
- and 
-\begin_inset Formula $Q_{\mathrm{m}}$
-\end_inset
-
- are unchanged relative to eq.
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:relatedness:diploid:Qf"
-
-\end_inset
-
-).
- 
+Relatedness - maternally inherited alleles
 \end_layout
 
 \begin_layout Standard
@@ -635,15 +661,141 @@ For maternal inheritance (MI), we then have
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-r_{i\mathrm{f}} & =r_{i\mathrm{m}}=1\label{eq:relatedness:diploid:MI:ri}\\
-r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=1\\
-r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{f}} & =r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{fm}}\\
-r_{\mathrm{f\rightarrow f}} & =\hat{Q}_{\mathrm{ff}},=\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:diploid:rff-1}\\
-r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{fm}}\\
-r_{\mathrm{m}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{mf}}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{mm}}\\
-r_{\mathrm{f}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{f}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rffjuv-1}\\
-r_{\mathrm{m}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{m}\rightarrow\mathrm{mjuv}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:rmfjuv-1}
+r_{i\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:diploid:MI:ri}
+\end{align}
+
+\end_inset
+
+as the identity between the maternally inherited allele and the focal allele
+ is identical to the within-individual relatedness coefficient for each
+ sex.
+ Similarly, relatedness coefficients between a maternally-inherited allele
+ from a focal's own daughters ('own juv,f') and sons ('own juv,m') (who
+ express the focal phenotype) when the focal allele is borne by the mother
+ and father respectively, are given by 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =1,\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=1\label{eq:relatedness:diploid:MI:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MI:rownjuvM}
+\end{align}
+
+\end_inset
+
+Regarding the first line, relatedness coefficients are 1 as a maternally
+ inherited allele that causes a mutant phenotype can only be the mutant
+ focal allele.
+ Regarding the second line, alleles in a focal adult male are identical
+ to maternally inherited alleles in his kids when alleles in his partner
+ are identical to his own, with probability 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between a maternally-inherited allele in a randomly
+ sampled adult breeder (female and male respectively) and the focal adult
+ female breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rf->m}
+\end{align}
+
+\end_inset
+
+as with 
+\begin_inset Formula $1/2$
+\end_inset
+
+ one samples a maternally inherited allele in the focal adult female breeder,
+ so that with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+ both share the same parent and the probability of identity is given by
+ 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ With probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+ both share different parents so that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+\end_inset
+
+.
+ Alternatively, with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+ one samples a paternally inherited allele in the focal adult female breeder,
+ so that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between a maternally-inherited allele in a randomly
+ sampled adult breeder (female and male respectively) and the focal adult
+ male breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}},\label{eq:relatedness:diploid:MI:rm->m}
+\end{align}
+
+\end_inset
+
+which can be derived in the same way as previously.
+ Relatedness coefficients between a maternally-inherited allele in a randomly
+ sampled juvenile breeder (female and male respectively) and the focal adult
+ female breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:MI:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}},\label{eq:relatedness:diploid:MI:rfjuvm}
+\end{align}
+
+\end_inset
+
+as a maternally inherited allele in a juvenile stems directly from the focal
+ adult female breeder with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+ so that identity is 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ Otherwise, the maternally inherited allele stems from another local adult
+ female breeder with probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+, so that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between a maternally-inherited allele in a randomly
+ sampled juvenile breeder (female and male respectively) and the focal adult
+ male breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MI:rmjuvm}
 \end{align}
 
 \end_inset
@@ -651,57 +803,8 @@ r_{\mathrm{m}\rightarrow\mathrm{fjuv}} & =r_{\mathrm{m}\rightarrow\mathrm{mjuv}}
 
 \end_layout
 
-\begin_layout Standard
-The coefficient of consanguinity between the focal juvenile individual and
- another juvenile female or male individual via the maternally and paternally
- inherited allele copy is
-\begin_inset Formula 
-\begin{align}
-Q_{\mathrm{ff}}^{\mathrm{jMI}} & =Q_{\mathrm{fm}}^{\mathrm{jMI}}=Q_{\mathrm{mf}}^{\mathrm{jMI}}=Q_{\mathrm{mm}}^{\mathrm{jMI}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatdness:diploid:QffjMI}\\
-Q_{\mathrm{ff}}^{\mathrm{jPI}} & =Q_{\mathrm{fm}}^{\mathrm{jPI}}=Q_{\mathrm{mf}}^{\mathrm{jPI}}=Q_{\mathrm{mm}}^{\mathrm{jPI}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:diploid:QffjPI}
-\end{align}
-
-\end_inset
-
-while coefficients of consanguinity between adults for an allele which is
- inherited according to mode 
-\begin_inset Formula $x$
-\end_inset
-
- (either 
-\begin_inset Formula $x=\mathrm{PI}$
-\end_inset
-
- or 
-\begin_inset Formula $x=\mathrm{MI}$
-\end_inset
-
-) are given by 
-\begin_inset Formula 
-\begin{align}
-Q_{\mathrm{ff}}^{x} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}x}\label{eq:relatedness:diploid:Qffx}\\
-Q_{\mathrm{fm}}^{x} & =h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}x}\label{eq:relatedness:diploid:Qfmx}\\
-Q_{\mathrm{mm}}^{x} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}x}.\label{eq:relatedness:diploid:Qmmx}
-\end{align}
-
-\end_inset
-
-These coefficients of consanguinity can then be substituted in the equations
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:relatedness:diploid:ri"
-
-\end_inset
-
--
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:relatedness:diploid:rmfjuv"
-
-\end_inset
-
-) for the respective relatedness coefficients.
+\begin_layout Subsubsection
+Relatedness - paternally inherited alleles
 \end_layout
 
 \begin_layout Subsection
@@ -727,7 +830,8 @@ Q_{\mathrm{mm}}^{\mathrm{j}} & =\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{
 
 \end_inset
 
-while adult coefficients of consanguinity are then given by eqns.
+while adult coefficients of consanguinity can then again be calculated from
+ eqns.
  (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -746,28 +850,39 @@ reference "eq:relatedness:diploid:Qmm"
 \end_layout
 
 \begin_layout Subsubsection
-Maternally inherited alleles (genomic imprinting)
+Relatedness - maternally inherited alleles
 \end_layout
 
 \begin_layout Standard
-We have
+For maternal inheritance (MI), we then have
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right),\ Q_{\mathrm{m}}^{\mathrm{MI}}=1\label{eq:relatedness:haplodiploid:QfMI}
+r_{i\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:haplodiploid:MI:ri}
 \end{align}
 
 \end_inset
 
-and
+as the identity between the maternally inherited allele and the focal allele
+ is identical to the within-individual relatedness coefficient for each
+ sex.
+ Similarly, relatedness coefficients between a maternally-inherited allele
+ in a focal's own daughter ('own juv,f') and son ('own juv,m') (who express
+ the focal phenotype) and focal alleles in a focal mother are given by 
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{ff}}^{\mathrm{jMI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:QffjMI}\\
-Q_{\mathrm{mf}}^{\mathrm{jMI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:QmfjMI}\\
-Q_{\mathrm{mm}}^{\mathrm{jMI}} & =Q_{\mathrm{fm}}^{\mathrm{j}\mathrm{MI}}=\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}.\label{eq:relatedness:haplodiploid:QfmjMI}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =1,\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=1\label{eq:relatedness:haplodiploid:MI:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:MI:rownjuvM}
 \end{align}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
