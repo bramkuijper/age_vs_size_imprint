@@ -250,7 +250,6 @@ void make_juveniles()
     DispersersF.clear();
     DispersersM.clear();
 
-    size_t total_offspring_produced = 0;
 
     // reset surviving individual counters
     NsurvM = 0;
@@ -296,7 +295,6 @@ void make_juveniles()
         }
 
         clutch_size = 0;
-        total_offspring_produced = 0;
 
         // reproduce
         for (size_t j = 0; j < Nfp; ++j)
@@ -356,7 +354,6 @@ void make_juveniles()
                 }
                 else
                 {
-                    ++total_offspring_produced; 
                     ++NsurvM;
                     // dispersal or not
                     if (gsl_rng_uniform(r) < dm)
@@ -374,7 +371,7 @@ void make_juveniles()
 
 //            if (MetaPop[i].philsM.size() < Nmp)
 //            {
- //               cout << MetaPop[i].philsM.size() << " " << MetaPop[i].philsF.size() << " " << total_offspring_produced << " " << MetaPop[i].localsF[Nfp-1].phen << " " << clutch_size << endl;
+//                cout << MetaPop[i].philsM.size() << " " << MetaPop[i].philsF.size() << " " << total_offspring_produced << " " << MetaPop[i].localsF[Nfp-1].phen << " " << clutch_size << endl;
 //            }
         } // end Nfp
     }//Npatches
