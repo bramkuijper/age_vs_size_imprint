@@ -372,10 +372,10 @@ void make_juveniles()
                 }
             } // end clutch
 
-            if (MetaPop[i].philsM.size() < Nmp)
-            {
-                cout << MetaPop[i].philsM.size() << " " << MetaPop[i].philsF.size() << " " << total_offspring_produced << " " << MetaPop[i].localsF[Nfp-1].phen << " " << clutch_size << endl;
-            }
+//            if (MetaPop[i].philsM.size() < Nmp)
+//            {
+ //               cout << MetaPop[i].philsM.size() << " " << MetaPop[i].philsF.size() << " " << total_offspring_produced << " " << MetaPop[i].localsF[Nfp-1].phen << " " << clutch_size << endl;
+//            }
         } // end Nfp
     }//Npatches
 
