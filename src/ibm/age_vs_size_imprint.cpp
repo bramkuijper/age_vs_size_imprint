@@ -121,7 +121,7 @@ void init_pop()
     total_time = time(NULL);
 
     // obtain a seed from current nanosecond count
-	seed = 300; //get_nanoseconds();
+	seed = get_nanoseconds();
     // set the seed to the random number generator
     // stupidly enough, this can only be done by setting
     // a shell environment parameter
