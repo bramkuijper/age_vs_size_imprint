@@ -289,7 +289,7 @@ We track the expected number
 -allele:
 \begin_inset Formula 
 \begin{align}
-w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}iz}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
 w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
 w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wfm}\\
 w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right].\label{eq:af:wmm}
@@ -462,7 +462,7 @@ key "Hamilton1964a,Taylor1996,Rousset2004,Taylor2007"
 \frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{f}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{i}}r_{i\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{ff}}}r_{\mathrm{f\rightarrow f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{jff}}}r_{\mathrm{f}\rightarrow\mathrm{fjuv}}\right)\nonumber \\
  & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{fm}}}r_{\mathrm{m\rightarrow f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{jfm}}}r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\label{eq:selgrad:af}\\
 \frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{m}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmf}}}r_{\mathrm{f}\rightarrow\mathrm{mjuv}}\right)\label{eq:selgrad:am}\\
- & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{mm}}}r_{\mathrm{m\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmm}}}r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)
+ & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{mm}}}r_{\mathrm{m\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmm}}}r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)
 \end{align}
 
 \end_inset
@@ -515,7 +515,7 @@ The coefficient of consanguinity
 l is given by
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:Qf}
+Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+Q_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:Qf}
 \end{align}
 
 \end_inset
@@ -561,8 +561,8 @@ Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}}.\label{eq:rela
 
 \end_layout
 
-\begin_layout Subsubsection
-Relatedness - alleles expressed by offspring
+\begin_layout Paragraph
+Relatedness - offspring expression of age at maturity
 \end_layout
 
 \begin_layout Standard
