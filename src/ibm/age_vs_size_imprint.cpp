@@ -29,7 +29,7 @@ const size_t Npatches = 1000;
 const size_t Nfp = 5; // females per patch
 const size_t Nmp = 5; // males per patch
 const size_t numgen = 20000;
-const size_t Clutch = 50;
+const size_t Clutch = 200;
 
 // mutation rates
 double mu = 0;
@@ -300,7 +300,7 @@ void make_juveniles()
         for (size_t j = 0; j < Nfp; ++j)
         {
             // calculate female clutch size
-            exact_clutch = Clutch + pow(k * MetaPop[i].localsF[j].phen,3) * Clutch; 
+            exact_clutch = pow(k * MetaPop[i].localsF[j].phen,3) * Clutch; 
             clutch_size = floor(exact_clutch);
            
             // stochastic rounding
