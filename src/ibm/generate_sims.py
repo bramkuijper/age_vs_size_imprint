@@ -3,8 +3,8 @@
 import numpy as np
 import math, sys
 
-nf = [ 2, 4 ]
-nm = [ 2, 4 ]
+nf = [ 1, 2, 4 ]
+nm = [ 1, 2, 4 ]
 df = [ 0.5, 0.9 ]
 dm = list(np.arange(0,1.05,0.05))
 q = 1
@@ -13,8 +13,8 @@ k = 1.0/3
 type = [ 0, 1, 2 ]
 diploid = [ 0, 1 ] 
 
-exe = "./xage_vs_size_imprint"
-#exe = "/home/uccoaku/age_vs_size_imprint/src/ibm/xage_vs_size_imprint"
+#exe = "./xage_vs_size_imprint"
+exe = "/home/uccoaku/age_vs_size_imprint/src/ibm/xage_vs_size_imprint"
 
 mu = 0.01
 sdmu = 0.02

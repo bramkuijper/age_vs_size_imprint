@@ -521,7 +521,7 @@ void replace_adults()
 
 void write_data_headers()
 {
-    DataFile << "generation;meanaf;varaf;meanam;varam;" << endl;
+    DataFile << "generation;meanaf;varaf;meanam;varam;nsurvf;nsurvm;" << endl;
 }
 
 void write_data()
@@ -588,7 +588,9 @@ void write_data()
                         << ";" << meanaf 
                         << ";" << varaf 
                         << ";" << meanam 
-                        << ";" << varam  << ";" << endl;
+                        << ";" << varam  
+                        << ";" << NsurvF 
+                        << ";" << NsurvM << ";" << endl;
 }
 
 void write_parameters()
