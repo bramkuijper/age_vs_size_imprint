@@ -9,6 +9,7 @@
 \definecolor{slateblue}{RGB}{17, 83,128}
 \usepackage{doi}
 \end_preamble
+\options numbers,sort&compress
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -56,7 +57,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine_type numerical
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -90,14 +91,261 @@
 \begin_body
 
 \begin_layout Title
-When should genomic imprinting affect sexual maturation?
+When Should Genomic Imprinting Affect Sexual Maturation?
+\end_layout
+
+\begin_layout Author
+Bram Kuijper
+\begin_inset Formula $^{1,2,3,4}$
+\end_inset
+
+ & Rufus A.
+ Johnstone
+\begin_inset Formula $^{5,6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{1})$
+\end_inset
+
+ CoMPLEX, Center of Mathematics and Physics in the Life Sciences and Experimenta
+l Biology, University College London, Gower Street, WC1 6BT, London, United
+ Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{2})$
+\end_inset
+
+ Department of Genetics, Evolution and Environment, University College London,
+ Gower Street, WC1 6BT, London, United Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{3})$
+\end_inset
+
+ Behaviour and Evolution Group, Department of Zoology, University of Cambridge,
+ Downing Street, CB2 3EJ Cambridge, United Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{4})$
+\end_inset
+
+ a.kuijper@ucl.ac.uk
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{5}$
+\end_inset
+
+) raj1003@cam.ac.uk
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The age at which an individual starts to reproduce is a key life-history
+ trait with profound fitness consequences 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cole1954,Roff1984,Brommer1998,Roff2000,Roff2002,Brommer2002,Krueger2005"
+
+\end_inset
+
+.
+ Reproducing early increases the probability of realizing reproduction before
+ mortality, while delaying the timing of reproduction allows for the accumulatio
+n of more resources, often resulting in a larger fecundity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Blanckenhorn2000"
+
+\end_inset
+
+.
+ Consequently, a trade-off between juvenile survival and adult fitness arises,
+ suggesting that selection favors an optimal age of sexual maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Stearns1992,Roff2002"
+
+\end_inset
+
+.
+ However, age at sexual maturition has been shown to have a complicated
+ genetic architecture, commonly involving not only genes expressed by the
+ offspring itself, but also by genes expressed in the parent or grandparents
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hafer2011,Saastamoinen2013,Kruuk2015"
+
+\end_inset
+
+.
+ Moreover, recent studies find that age at maturity is also affected by
+ genomic imprinting 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Charalambous2007,Perry2014"
+
+\end_inset
+
+, thus involving differential expression of alleles dependent on their parent
+ of origin 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ferguson-Smith2011,Koehler2012"
+
+\end_inset
+
+.
+ This raises the question when and where genomic imprinting is expected
+ to underly the timing of sexual maturation.
+\end_layout
+
+\begin_layout Standard
+Although recent theoretical studies have started to assess in which ecological
+ and social contexts genomic imprinting is likely to evolve 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "reviewed in"
+key "Holman2014,Patten2014,Spencer2014"
+
+\end_inset
+
+, most of these studies focus on an abstract phenotype which only affects
+ offspring survival [
+\begin_inset CommandInset citation
+LatexCommand citealp
+before "e.g.,"
+key "Ubeda2010,Ubeda2011,Ubeda2012,Spencer2006,Spencer2009,Wolf2013"
+
+\end_inset
+
+ but see 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Wild2009,Farrell2015,VanCleve2010"
+
+\end_inset
+
+], thus ignoring most of the constraints and trade-offs underlying life-history
+ traits in reality.
+ To overcome this, here we assess the evolution of genomic imprinting in
+ a realistic life-history model on the evolution of age and size at sexual
+ maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roff1984,Roff2002,Johnstone2014"
+
+\end_inset
+
+, where faster maturation increases the probability of surviving to maturity
+ at the cost of a smaller adult size and thus lower fecundity.
+\end_layout
+
+\begin_layout Standard
+We study the evolution of genomic imprinting on age versus size at maturity
+ in a structured population, taking a demographically explicit approach
+ where local competition and relatedness arise from limited dispersal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rousset2004,Lion2011,Gardner2010"
+
+\end_inset
+
+.
+ Studying a demographical model of age versus size at maturity is essential
+ for two key reasons: first, local competition among relatives has been
+ repeatedly shown to affect various life-history traits 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pen2000,Ronce2004,Ronce2010,Lion2010a,Kuijper2015a"
+
+\end_inset
+
+, as it changes the trade-off between current and future reproduction 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pen2000"
+
+\end_inset
+
+.
+ Indeed, in a recent demographical model of age at sexual maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Johnstone2014"
+
+\end_inset
+
+, we showed that the sex which experiences more local competition has an
+ accelerated rate of sexual maturity.
+ Second, relatedness asymmetries due to sex-biased dispersal and/or mating
+ skew are well-known to favor the evolution of genomic imprinting 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haig2000a,Brandvain2010,Brandvain2011,VanCleve2010,Ubeda2010"
+
+\end_inset
+
+.
+ This is because sex-biased dispersal leads to asymmetries in relatedness
+ between maternally versus paternally inherited alleles and their relatives,
+ so that differential gene expression is likely to evolve when the trait
+ in question affects interactions between relatives 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haig2000a"
+
+\end_inset
+
+.
+ Consequently, considering local competition between relatives is likely
+ to be an important ecological aspect that affects whether genomic imprinting
+ affects age at sexual maturity.
+\end_layout
+
+\begin_layout Section
+The model
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+- mention other hypotheses on genomic imprinting: i.e., conflict versus coadaptati
+on 
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "/home/bram/Projects/databases/transgenerational"
-options "bram"
+options "procbnumer"
 
 \end_inset
 
@@ -651,7 +899,61 @@ r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - maternally inherited alleles
+Relatedness - maternal expression
+\end_layout
+
+\begin_layout Standard
+The identify to the focal allele within male and female adult actors is
+ then given by
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{m}}.\label{eq:relatedness:diploid:MC:ri}
+\end{align}
+
+\end_inset
+
+Relatedness between the focal allele within the adult female or male and
+ her own offspring is given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MC:rfownjuvf}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MC:rmownjuvf}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ between the focal allele in an adult female or male and any locally born
+ juvenile of sex 
+\begin_inset Formula $x$
+\end_inset
+
+ are again given by eqns (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:rfjuvf"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:rmjuvm"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Relatedness - maternally inherited alleles expressed in offspring (imprinting)
 \end_layout
 
 \begin_layout Standard
@@ -879,10 +1181,6 @@ r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\ma
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
