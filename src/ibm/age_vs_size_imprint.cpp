@@ -210,6 +210,12 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
             case 2: // padumnal allele
                 Kid.phen = father.af[paternal_allele_f];
                 break;
+            case 3: // maternal expression
+                Kid.phen = 0.5 * (mother.am[0] + mother.am[1]);
+                break;
+            case 4: // paternal expression
+                Kid.phen = diploid ? 0.5 * (father.am[0] + father.am[1]) : father.am[0];
+                break;
             default: // normal allele
                 Kid.phen = .5 * (Kid.af[0] + Kid.af[1]);
                 break;
@@ -233,6 +239,12 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
                 break;
             case 2: // padumnal allele
                 Kid.phen = diploid ? father.am[paternal_allele_m] : Kid.am[0];
+                break;
+            case 3: // maternal expression
+                Kid.phen = 0.5 * (mother.am[0] + mother.am[1]);
+                break;
+            case 4: // paternal expression, assumed to be absent for sons in haplodiploids
+                Kid.phen = diploid ? 0.5 * (father.am[0] + father.am[1]) : Kid.am[0];
                 break;
             default: // normal allele
                 Kid.phen = diploid ? .5 * (Kid.am[0] + Kid.am[1]) : Kid.am[0];
