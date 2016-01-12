@@ -660,8 +660,29 @@ void write_data()
 
 void write_parameters()
 {
+    string str_imprint;
+
+    switch(type) {
+        case 0:
+            str_imprint = "offspring";
+            break;
+        case 1:
+            str_imprint = "madumnal";
+            break;
+        case 2:
+            str_imprint = "padumnal";
+            break;
+        case 3:
+            str_imprint = "maternal";
+            break;
+        case 3:
+            str_imprint = "paternal";
+            break;
+    }
+
+
     DataFile << endl << endl << "system;" << (diploid ? "diploid" : "haplodiploid") << endl
-                << "imprint;" << (type == 0 ? "offspring" : (type == 1 ? "madumnal" : "padumnal")) << endl
+                << "imprint;" << str_imprint << endl
                 << "patch;" << Npatches << endl
                 << "nfp;" << Nfp << endl
                 << "nmp;" << Nmp << endl
