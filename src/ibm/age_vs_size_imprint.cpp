@@ -663,9 +663,6 @@ void write_parameters()
     string str_imprint;
 
     switch(type) {
-        case 0:
-            str_imprint = "offspring";
-            break;
         case 1:
             str_imprint = "madumnal";
             break;
@@ -675,8 +672,11 @@ void write_parameters()
         case 3:
             str_imprint = "maternal";
             break;
-        case 3:
+        case 4:
             str_imprint = "paternal";
+            break;
+        default:
+            str_imprint = "offspring";
             break;
     }
 
