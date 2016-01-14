@@ -3,13 +3,13 @@
 import numpy as np
 import math, sys
 
-nf_nm = [[2,2],[4,1],[1,4]]
+nf_nm = [[2,2],[3,2],[2,3]]
 df = [ 0.5 ]
 dm = list(np.arange(0,1.05,0.05))
 q = 1
 k = 1.0/3
 
-type = [ 0, 1, 2 ]
+type = [ 3, 4 ]
 diploid = [ 0, 1 ] 
 
 exe = "./xage_vs_size_imprint"

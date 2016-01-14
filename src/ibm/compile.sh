@@ -2,8 +2,8 @@
 
 #array_nf=(1 2 3 4 5 10)
 #array_nm=(1 2 3 4 5 10)
-array_nf=(1 2 4)
-array_nm=(1 2 4)
+array_nf=(1 2 3 4)
+array_nm=(1 2 3 4)
 
 for i in "${array_nf[@]}"
 do
