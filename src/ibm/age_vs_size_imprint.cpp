@@ -328,7 +328,7 @@ void make_juveniles()
                 // select male based on his reproductive effort
                 cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
 
-                father = 1000;
+                father = Nmp+1;
 
                 for (size_t male_i = 0; male_i < Nmp; ++male_i)
                 {
@@ -578,6 +578,7 @@ void replace_adults()
         {
             random_ind = gsl_rng_uniform_int(r, DispersersF.size());
             DispersersF[random_ind] = DispersersF.back();
+            assert(DispersersF[random_ind].phen == (DispersersF.back()).phen);
             DispersersF.pop_back();
         }
         // remove all remaining male immigrants from the global dispersal pool
@@ -585,6 +586,8 @@ void replace_adults()
         {
             random_ind = gsl_rng_uniform_int(r, DispersersM.size());
             DispersersM[random_ind] = DispersersM.back();
+            assert(DispersersM[random_ind].phen == (DispersersM.back()).phen);
+
             DispersersM.pop_back();
         }
     }

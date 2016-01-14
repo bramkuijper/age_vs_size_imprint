@@ -35,9 +35,9 @@
 \spacing single
 \use_hyperref true
 \pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
 \pdf_breaklinks true
 \pdf_pdfborder true
 \pdf_colorlinks true
@@ -411,6 +411,16 @@ key "Roff1984,Stearns1986"
 \end_inset
 
  in males.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Say why we consider sex-limited expression of age at maturity
+\end_layout
+
+\end_inset
+
  Although qualitatively similar, the trade-off takes a slightly different
  form dependent on the sex considered: in adult females, age at maturity
  directly affects the number of offspring produced, while in adult males
@@ -509,8 +519,149 @@ We will write
  cycle repeats itself.
 \end_layout
 
+\begin_layout Standard
+We assume that the evolution of age at maturity proceeds through the successive
+ substitution of mutations of small effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geritz1998,Rousset2004,McGill2007"
+
+\end_inset
+
+, and selection gradients describing the evolutionary dynamics of 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ in the Online Supplement.
+\end_layout
+
 \begin_layout Section
 Results
+\end_layout
+
+\begin_layout Standard
+To fix ideas, we first assess a `baseline' scenario in which populations
+ are well mixed (full female and male dispersal: 
+\begin_inset Formula $h_{\mathrm{f}}=0,\ h_{\mathrm{m}}=0$
+\end_inset
+
+).
+ We then recover the classical result 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roff2002"
+
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align}
+-\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:well_mixed:af:ES}\\
+-\frac{s^{\prime}\left(a_{\mathrm{m}}^{\star}\right)}{s\left(a_{\mathrm{m}}^{\star}\right)} & =\frac{f^{\prime}\left(a_{\mathrm{m}}^{\star}\right)}{f\left(a_{\mathrm{m}}^{\star}\right)},\label{eq:well_mixed:am:ES}
+\end{align}
+
+\end_inset
+
+implying that the marginal decrease in juvenile survival 
+\begin_inset Formula $s(\cdot)$
+\end_inset
+
+ (caused by a slightly higher age at maturity) must precisely balance the
+ proportional increase in adult fecundity 
+\begin_inset Formula $f(\cdot).$
+\end_inset
+
+ However, as noted before 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Johnstone2014"
+
+\end_inset
+
+, this result changes in a viscous population, where we find:
+\begin_inset Formula 
+\begin{align}
+-\frac{1}{2}\left(r_{\text{\mathrm{f}\rightarrow self,juv}}-r_{\mathrm{f}\rightarrow\text{competing juv}}\right)\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\left(r_{\mathrm{f}\rightarrow\text{own young}}-r_{\mathrm{f}\rightarrow\text{competing young}}\right)\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:viscous:af:ES}\\
+-\frac{1}{2}\left(r_{\mathrm{m}\rightarrow\text{self,juv}}-r_{\mathrm{m}\rightarrow\text{competing juv}}\right)\frac{s^{\prime}\left(a_{\mathrm{m}}^{\star}\right)}{s\left(a_{\mathrm{m}}^{\star}\right)} & =\left(r_{\mathrm{self}}-r_{\mathrm{m}\rightarrow\text{competing young}}\right)\frac{f^{\prime}\left(a_{\mathrm{m}}^{\star}\right)}{f\left(a_{\mathrm{m}}^{\star}\right)}.\label{eq:viscous:am:ES}
+\end{align}
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ES_nf2_nm2"
+
+\end_inset
+
+ shows how sex-biased dispersal affects age at maturity in both sexes, where
+ the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis reflects increasing male dispersal and decreasing female dispersal:
+ 
+\begin_inset Formula $d_{\mathrm{m}}=1-d_{\mathrm{f}}$
+\end_inset
+
+.
+ Interestingly, we find that increased philopatry always favors a higher
+ age at maturity in females.
+ In males, dispersal has no effect on age at maturity unless there is some
+ degree of nonlocal mating (compare solid lines between Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ES_nf2_nm2"
+
+\end_inset
+
+B, D).
+ 
+\end_layout
+
+\begin_layout Standard
+Interestingly, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ES_nf2_nm2"
+
+\end_inset
+
+ shows that sex differences in dispersal changes some of these conclusions
+\end_layout
+
+\begin_layout Standard
+In the absence of nonlocal mating, but with sex-differences in dispersal,
+ we find a different pattern: when females are the more philopatric sex
+ (right-hand side of Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ES_nf2_nm2"
+
+\end_inset
+
+A, C), in combination leading to lower ages at maturity in females than
+ males.
+ By
+\end_layout
+
+\begin_layout Standard
+For a fixed level of female dispersal, 
+\begin_inset Formula $d_{\mathrm{f}}=0.5$
+\end_inset
+
+, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ES_nf2_nm2-1"
+
+\end_inset
+
+ compares these results with individual-based simulations (thin lines).
 \end_layout
 
 \begin_layout Section
@@ -518,8 +669,64 @@ Discussion
 \end_layout
 
 \begin_layout Standard
+A previous study which considered equal dispersal rates across the sexes
+ showed that limited dispersal favors a lower female age at maturity, yet
+ a higher male age at maturity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Johnstone2014"
+
+\end_inset
+
+, at least when there is a slight degree of nonlocal mating 
+\begin_inset Formula $\ell<1$
+\end_inset
+
+.
+ The same pattern is found in the current study for males, yet not for females:
+ to recapatulate the result for males from the previous study, in viscous
+ populations with a slight degree of nonlocal mating, an increase in male
+ fecundity results in more sirings in remote patches, whereas an increase
+ in male juvenile survival leads to more competition among males in the
+ local patch, favoring a higher male age at maturity.
+ The same pattern, although for slightly different reasons, is found here:
+ an increase in male age at maturity leads to a higher fertily (both in
+ remote 
+\end_layout
+
+\begin_layout Standard
+However, things are different when the sexes differ in dispersal, as limited
+ dispersal by one sex always selects for an increase in the age at maturity
+ of that sex.
+ Why is this the case? When females are the more philopatric sex, an increase
+ in a female's age at maturity (and hence an increase in fecundity) now
+ leads to less kin competition overall: although more daughters are produced
+ who will compete with each other, also more sons are produced, who disperse
+ and compete for breeding positions elsewhere.
+ By contrast, an increase in a female's juvenile survival increases competition
+ among philopatric female relatives, yet has no effect on dispersing males.
+ Hence, in the presence of sex-differences in dispersal, we would predict
+ that the more philopatric sex has the highest age at maturity.
+ 
+\end_layout
+
+\begin_layout Standard
+Consequently, whether dispersal is the same or different across the sexes
+ may 
+\end_layout
+
+\begin_layout Standard
 - mention other hypotheses on genomic imprinting: i.e., conflict versus coadaptati
-on 
+on.
+ Also some other relevant work on sex-specific selection and imprinting,
+ e.g., 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Patten2008"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -527,8 +734,51 @@ Figures
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename para
+	filename figs/male_vs_female_philopatry_annotated.pdf
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ES_nf2_nm2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
 
 \end_inset
 
@@ -596,6 +846,17 @@ renewcommand*
 theequation{S
 \backslash
 arabic{equation}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*
+\backslash
+theHsection{S
+\backslash
+arabic{section}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -707,7 +968,11 @@ end{center}
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Section
+Fitness expressions
+\end_layout
+
+\begin_layout Subsection
 Fitness expressions female age at maturity
 \end_layout
 
@@ -725,7 +990,7 @@ We track the expected number
 \end_inset
 
  that bears the mutant 
-\begin_inset Formula $s_{\mathrm{f}}$
+\begin_inset Formula $a_{\mathrm{f}}$
 \end_inset
 
 -allele:
@@ -733,8 +998,9 @@ We track the expected number
 \begin{align}
 w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
 w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
-w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wfm}\\
-w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right].\label{eq:af:wmm}
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\right.\nonumber \\
+ & \left.+\left(1-\ell\right)\frac{s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{s\left(a_{\mathrm{f}}\right)}\right\} \label{eq:af:wfm}\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]+\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\right\} .\label{eq:af:wmm}
 \end{align}
 
 \end_inset
@@ -835,20 +1101,34 @@ Regarding the first line, an adult female bearing the focal allele has fecundity
 \begin_inset Formula $w_{\cdot\mathrm{m}}$
 \end_inset
 
- of successful offspring born from a focal adult male, his average mating
- success is given by 
+ of successfully established offspring born from a focal adult male, note
+ that he can compete for matings in the local patch with probability 
+\begin_inset Formula $\ell$
+\end_inset
+
+, while he mates in a random remote patch with probability 
+\begin_inset Formula $1-\ell$
+\end_inset
+
+.
+ In both cases, his average mating success is given by 
 \begin_inset Formula $n_{\mathrm{f}}f(a_{\mathrm{m}})/(n_{\mathrm{m}}f(a_{\mathrm{m}}))$
 \end_inset
 
 , and the number of offspring he sires is given by the average fecundity
- of all local female breeders 
+ of the female breeders in that patch (
 \begin_inset Formula $f(a_{\mathrm{f}}^{\mathrm{fm}})$
 \end_inset
 
- when the focal allele copy is present in a male.
+ in the local patch, indicating female fecundity when the focal allele copy
+ is present in a male) or 
+\begin_inset Formula $f(a_{\mathrm{f}})$
+\end_inset
+
+ elsewhere.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 Fitness expressions male age at maturity
 \end_layout
 
@@ -858,8 +1138,9 @@ We have
 \begin{align*}
 w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}\\
 w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}\left[\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{jmf}}\right)+d_{\mathrm{m}}s\left(a_{\mathrm{m}}\right)\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}s\left(a_{\mathrm{m}}\right)}\right]\\
-w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}\\
-w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}\left[\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{jmm}}\right)+d_{\mathrm{m}}s\left(a_{\mathrm{m}}\right)\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}s\left(a_{\mathrm{m}}\right)}\right].
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left[\ell\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}+\left(1-\ell\right)\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}\right)}\right]\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell\frac{f\left(a_{\mathrm{m}}^{i}\right)}{f\left(a_{\mathrm{m}}^{\mathrm{mm}}\right)}\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}\left[\left(1-d_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}^{\mathrm{jmm}}\right)+d_{\mathrm{m}}s\left(a_{\mathrm{m}}\right)\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}s\left(a_{\mathrm{m}}\right)}\right]\right..\\
+ & \left.+\left(1-\ell\right)\frac{n_{\mathrm{m}}f\left(a_{\mathrm{m}}^{i}\right)s\left(a_{\mathrm{m}}^{\mathrm{j}i}\right)}{n_{\mathrm{f}}f\left(a_{\mathrm{m}}\right)s\left(a_{\mathrm{m}}\right)}\right\} 
 \end{align*}
 
 \end_inset
@@ -901,10 +1182,10 @@ key "Hamilton1964a,Taylor1996,Rousset2004,Taylor2007"
 :
 \begin_inset Formula 
 \begin{align}
-\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{f}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{i}}r_{i\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{ff}}}r_{\mathrm{f\rightarrow f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{jff}}}r_{\mathrm{f}\rightarrow\mathrm{fjuv}}\right)\nonumber \\
- & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{fm}}}r_{\mathrm{m\rightarrow f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{jfm}}}r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\label{eq:selgrad:af}\\
-\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{m}}} & =c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmf}}}r_{\mathrm{f}\rightarrow\mathrm{mjuv}}\right)\label{eq:selgrad:am}\\
- & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{mm}}}r_{\mathrm{m\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmm}}}r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)
+\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{f}}} & =\left[c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{i}}r_{i\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{ff}}}r_{\mathrm{f\rightarrow f}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{f}}^{\mathrm{jff}}}r_{\mathrm{f}\rightarrow\mathrm{fjuv}}\right)\right.\nonumber \\
+ & +\left.\left.c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{j}i}}r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{fm}}}r_{\mathrm{m\rightarrow f}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{f}}^{\mathrm{jfm}}}r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\right]\right|_{a_{\mathrm{f}}^{x}=a_{\mathrm{f}}}\label{eq:selgrad:af}\\
+\frac{\mathrm{d}w}{\mathrm{d}a_{\mathrm{m}}} & =\left[c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmf}}}r_{\mathrm{f}\rightarrow\mathrm{mjuv}}\right)\right.\nonumber \\
+ & +\left.c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{i}}r_{i\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}+\frac{\partial w_{\mathrm{m}}}{\partial a_{\mathrm{m}}^{\mathrm{mm}}}r_{\mathrm{m\rightarrow m}}+\frac{\partial w_{\mathrm{f}}}{\partial a_{\mathrm{m}}^{\mathrm{jmm}}}r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)\right]\Biggl|_{a_{\mathrm{m}}^{x}=a_{\mathrm{m}}}\label{eq:selgrad:am}
 \end{align}
 
 \end_inset
@@ -934,10 +1215,157 @@ t from the same patch,
 \end_inset
 
  reflects relatedness between an adult male and one of his daughters.
+ All partial derivatives of the variables 
+\begin_inset Formula $a_{\mathrm{f}}^{x}=[a_{\mathrm{f}}^{i},a_{\mathrm{f}}^{\mathrm{j}i},\ldots,a_{\mathrm{f}}^{\mathrm{jfm}}]$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}^{x}=[a_{\mathrm{m}}^{\mathrm{j}i},a_{\mathrm{m}}^{\mathrm{jmf}}\ldots,a_{\mathrm{m}}^{\mathrm{jmm}}]$
+\end_inset
+
+ are evaluated at the resident trait values 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ respectively.
 \end_layout
 
 \begin_layout Subsection
-Relatedness coefficients for diplodiploidy
+Evolutionarily singular strategies
+\end_layout
+
+\begin_layout Paragraph
+Female age at maturity
+\end_layout
+
+\begin_layout Standard
+Solving 
+\begin_inset Formula $\mathrm{d}w/\mathrm{d}a_{\mathrm{f}}=0$
+\end_inset
+
+ and assuming diploid inheritance, we obtain the following identity for
+ the singular strategy 
+\begin_inset Formula $(a_{\mathrm{f}}^{\star})$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align}
+-\frac{1}{2}\left[r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}-h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{fjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\right]\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\nonumber \\
+\left[r_{\mathrm{f}}^{i}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}-\frac{1}{2}\left(h_{\mathrm{f}}^{2}+h_{\mathrm{m}}^{2}\right)\left(r_{\mathrm{f}\rightarrow\mathrm{f}}+r_{\mathrm{f}\rightarrow\mathrm{m}}\right)\right]\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:supplement:af_ES}
+\end{align}
+
+\end_inset
+
+Now we substitute on the left-hand side of the equation above for 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{self juv}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}\label{eq:supplement:ES:rfselfjuv}\\
+r_{\mathrm{f}\rightarrow\text{competing juv,f}} & =h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{fjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right),\label{eq:supplement:ES:rfcompetingjuv}
+\end{align}
+
+\end_inset
+
+where the first line reflects relatedness of the focal allele to itself
+ when present in a female juvenile.
+ The second line reflects relatedness of the focal allele to other, competing
+ female juveniles.
+ On the right-hand side, we substitute for
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own offspring}} & =r_{\mathrm{f}}^{i}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\label{eq:supplement:ES:rfownoffspring}\\
+r_{\mathrm{f}\rightarrow\text{competing offspring}} & =\frac{1}{2}\left(h_{\mathrm{f}}^{2}+h_{\mathrm{m}}^{2}\right)\left(r_{\mathrm{f}\rightarrow\mathrm{f}}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\right),\label{eq:supplement:ES:rfcompetingoffspring}
+\end{align}
+
+\end_inset
+
+where the first line gives relatedness to an adult female's own offspring
+ (male and female), as a result of the direct transmission of her own allele
+ copies to her offspring (
+\begin_inset Formula $r_{\mathrm{f}}^{i}$
+\end_inset
+
+) and the transmission of identical allele copies to her offspring via her
+ locally mating partner, 
+\begin_inset Formula $\ell r_{\mathrm{f}\rightarrow\mathrm{m}}$
+\end_inset
+
+.
+ The second line gives relatedness to offspring that compete with the adult
+ female's own offspring.
+\end_layout
+
+\begin_layout Paragraph
+Male age at maturity
+\end_layout
+
+\begin_layout Standard
+Solving 
+\begin_inset Formula $\mathrm{d}w/\mathrm{d}a_{\mathrm{m}}=0$
+\end_inset
+
+ and assuming diploid inheritance, we obtain the following identity for
+ the singular strategy 
+\begin_inset Formula $(a_{\mathrm{m}}^{\star})$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align}
+-\frac{1}{2}\left[r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}-h_{\mathrm{m}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{mjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right)\right]\frac{s^{\prime}\left(a_{\mathrm{m}}^{\star}\right)}{s\left(a_{\mathrm{m}}^{\star}\right)} & =\nonumber \\
+\left[r_{\mathrm{m}}^{i}-\ell r_{\mathrm{m}\rightarrow\mathrm{m}}\right]\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:supplement:am_ES}
+\end{align}
+
+\end_inset
+
+Now we substitute on the left-hand side of the equation above for 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\text{self juv}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}\label{eq:supplement:ES:rmselfjuv}\\
+r_{\mathrm{m}\rightarrow\text{competing juv,m}} & =h_{\mathrm{m}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{mjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{mjuv}}\right),\label{eq:supplement:ES:rmcompetingjuv}
+\end{align}
+
+\end_inset
+
+where the first line reflects relatedness of the focal allele to itself
+ when present in a male juvenile.
+ The second line reflects relatedness of the focal allele to other, competing
+ male juveniles.
+ On the right-hand side, we substitute for
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\text{own offspring}} & =r_{\mathrm{m}}^{i}+\ell r_{\mathrm{m}\rightarrow\mathrm{f}}\label{eq:supplement:ES:rmownoffspring}\\
+r_{\mathrm{m}\rightarrow\text{competing offspring}} & =\ell\left(r_{\mathrm{m}\rightarrow\mathrm{m}}+r_{\mathrm{f}\rightarrow\mathrm{m}}\right).\label{eq:supplement:ES:rmcompetingoffspring}
+\end{align}
+
+\end_inset
+
+where the first line gives relatedness to an adult male's own offspring
+ (male and female), as a result of the direct transmission of her own allele
+ copies to her offspring (
+\begin_inset Formula $r_{\mathrm{m}}^{i}$
+\end_inset
+
+) and the transmission of identical allele copies to her offspring via his
+ related partner (when mating locally): 
+\begin_inset Formula $\ell r_{\mathrm{m}\rightarrow\mathrm{f}}$
+\end_inset
+
+.
+ The second line gives relatedness to offspring that compete with the adult
+ female's own offspring.
+\end_layout
+
+\begin_layout Section
+Relatedness coefficients
+\end_layout
+
+\begin_layout Subsection
+Diplodiploidy
 \end_layout
 
 \begin_layout Subsubsection
@@ -957,7 +1385,7 @@ The coefficient of consanguinity
 l is given by
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+Q_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:Qf}
+Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+\ell Q_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:Qf}
 \end{align}
 
 \end_inset
@@ -970,7 +1398,7 @@ To calculate
  juveniles
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{ff}}^{\mathrm{j}} & =Q_{\mathrm{fm}}^{\mathrm{j}}=Q_{\mathrm{mf}}^{\mathrm{j}}=Q_{\mathrm{mm}}^{\mathrm{j}}=\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:QffJ}
+Q_{\mathrm{ff}}^{\mathrm{j}} & =Q_{\mathrm{fm}}^{\mathrm{j}}=Q_{\mathrm{mf}}^{\mathrm{j}}=Q_{\mathrm{mm}}^{\mathrm{j}}=\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}\ell Q_{\mathrm{fm}}+\frac{1}{4}\ell^{2}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:QffJ}
 \end{align}
 
 \end_inset
@@ -1000,7 +1428,8 @@ where
 
  reflects the coefficient of consanguinity between an adult female and male
  that are randomly sampled in the local patch.
- 
+ Equilibrium coefficients of consanguinity (denoted by hats) are then obtained
+ from solving the above recursions.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1046,45 +1475,100 @@ r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{
 \end_inset
 
 Relatedness coefficients between alleles in a randomly sampled adult breeder
- (female and male respectively) and the focal adult female breeder are given
- by
+ (female and male respectively) and the focal adult male breeder (i.e., sampling
+ with replacement) are given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:rf->f}\\
-r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rf->m}
-\end{align}
-
-\end_inset
-
-Relatedness coefficients between alleles in a randomly sampled adult breeder
- (female and male respectively) and the focal adult male breeder are given
- by
-\begin_inset Formula 
-\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rf->m}\\
 r_{\mathrm{m}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:rm->f}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:rm->m}
+r_{\mathrm{m}\rightarrow\mathrm{m}} & =\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:rm->m}
 \end{align}
 
 \end_inset
 
+Regarding the first line, with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+, we sample the same adult female so identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ With probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+ we sample a different adult female, in which case relatedness is given
+ by 
+\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+\end_inset
+
+.
+ The other lines can be derived in a similar fashion.
+\end_layout
+
+\begin_layout Standard
 Relatedness coefficients between alleles in a randomly sampled juvenile
  breeder (female and male respectively) and the focal adult female breeder
  are given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rfjuvf}\\
-r_{\mathrm{f}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rfjuvm}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rfjuvm}
 \end{align}
 
 \end_inset
 
+With probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, the allele sampled in the juvenile is maternally inherited, in which the
+ focal female is the juvenile's mother with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+ and identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ With probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+ the juvenile has a different mother and identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+\end_inset
+
+.
+ Alternatively, with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, the paternally inherited gene copy is sampled.
+ With probability 
+\begin_inset Formula $\ell$
+\end_inset
+
+, this father is from the local patch in which case identity is given by
+ 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Relatedness coefficients between alleles in a randomly sampled juvenile
  breeder (female and male respectively) and the focal adult male breeder
  are given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{m}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:rmjuvf}\\
-r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rmjuvm}
+r_{\mathrm{m}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:diploid:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rmjuvm}
 \end{align}
 
 \end_inset
@@ -1116,7 +1600,7 @@ The phenotype of a focal adult female and male is now determined by their
  We now have 
 \begin_inset Formula 
 \begin{align}
-r_{i\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MC:ri}
+r_{i\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MC:ri}
 \end{align}
 
 \end_inset
@@ -1151,8 +1635,8 @@ Relatedness between a focal adult female (or male) and their own offspring
  in case of maternal expression is given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MC:rfownjuvf}\\
-r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rmownjuvf}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MC:rfownjuvf}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\ell\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rmownjuvf}
 \end{align}
 
 \end_inset
@@ -1176,11 +1660,12 @@ reference "eq:relatedness:diploid:MC:ri"
 
 \begin_layout Standard
 Relatedness coefficients between a focal adult female and any randomly sampled
- adult female when phenotypes are maternally expressed are given by 
+ adult female (sampled with replacement) when phenotypes are maternally
+ expressed are given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MC:rf->f}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{M}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rm->m}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{M}}=r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{M}}=\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MC:rf->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{M}} & =\frac{1}{2}\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{ff}}+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MC:rm->m}
 \end{align}
 
 \end_inset
@@ -1188,17 +1673,12 @@ r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\mat
 What counts is relatedness between the focal adult recipient and the mother
  of the other randomly sampled adult.
  With probability 
-\begin_inset Formula $1/2$
-\end_inset
-
-, we sample the focal's maternally inherited allele copy.
- With probability 
 \begin_inset Formula $1/n_{\mathrm{f}}$
 \end_inset
 
-, the other randomly sampled adult shares the same mother with the focal,
- so that identity is given by 
-\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+, the other randomly sampled individual is the same as the focal, so that
+ identity between the focal and the mother is given by 
+\begin_inset Formula $\frac{1}{2}(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}})$
 \end_inset
 
 .
@@ -1206,7 +1686,17 @@ What counts is relatedness between the focal adult recipient and the mother
 \begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
 \end_inset
 
-, both have different mothers, so that identity is given by 
+, the other randomly sampled individual is distinct, in which case identity
+ is given by 
+\begin_inset Formula $1/2(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}})$
+\end_inset
+
+, as with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+ the focal recipient's maternally inherited allele copy is sampled, which
+ is identical to the actor's mother with probability 
 \begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
 \end_inset
 
@@ -1215,12 +1705,17 @@ What counts is relatedness between the focal adult recipient and the mother
 \begin_inset Formula $1/2$
 \end_inset
 
-, the paternally inherited allele is sampled in the focal recipient, so
- that identity is given by 
-\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+, the focal recipient's paternally inherited allele copy is sampled, which
+ is identical to the actor's mother with probability 
+\begin_inset Formula $\ell\hat{Q}_{\mathrm{fm}}$
 \end_inset
 
 .
+ The other coefficients can be calculated in the same fashion, although
+ the between-sex coefficients already intrinsically involve the sampling
+ of distinct individuals.
+ Yet, as these individuals can still share the same mother, one arrives
+ at the same expression.
 \end_layout
 
 \begin_layout Standard
@@ -1277,7 +1772,7 @@ The phenotype of a focal adult female and male is now determined by their
  We now have 
 \begin_inset Formula 
 \begin{align}
-r_{i\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:ri}
+r_{i\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:ri}
 \end{align}
 
 \end_inset
@@ -1286,22 +1781,108 @@ Relatedness between a focal adult female (or male) and their own offspring
  in case of paternal expression is given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PC:rfownjuvf}\\
-r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:rmownjuvf}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PC:rfownjuvf}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:rmownjuvf}
 \end{align}
 
 \end_inset
 
 Relatedness coefficients between a focal adult female and any randomly sampled
- adult female when phenotypes are paternally expressed are given by 
+ adult female (sampled with replacement) when phenotypes are paternally
+ expressed are given by 
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PC:rf->f}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{P}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:PC:rm->m}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:PC:rf-f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{P}}=\frac{1}{2}\ell\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{P}} & =\frac{1}{2}\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:PC:rm->m}
 \end{align}
 
 \end_inset
 
+Regarding 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{P}}$
+\end_inset
+
+, with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+, the focal adult female is resampled, so that relatedness of the focal
+ to her own father is given by 
+\begin_inset Formula $(1/2)(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}})$
+\end_inset
+
+.
+ Alternatively, a different adult female is sampled with probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+.
+ In that case, the probability that the paternally inherited allele (sampled
+ with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+) in the focal female is identical to an allele in the nonfocal father is
+ given by 
+\begin_inset Formula $\ell^{2}Q_{\mathrm{mm}}$
+\end_inset
+
+, as both the focal's father and the nonfocal's father should mate locally
+ in order for alleles to be identical.
+ Alternatively, with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+ the maternally inherited allele is sampled in the focal, which is identical
+ to the allel sampled in the nonfocal female's father with probability 
+\begin_inset Formula $\ell\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+ Regarding 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{P}}$
+\end_inset
+
+, a randomly sampled male is sired by a local male with probability 
+\begin_inset Formula $\ell$
+\end_inset
+
+.
+ The same local male has sired the focal female with probability 
+\begin_inset Formula $1/n_{\mathrm{m}}$
+\end_inset
+
+, in which case relatedness of the focal female to her father is given by
+ 
+\begin_inset Formula $(1/2)(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}})$
+\end_inset
+
+.
+ Alternatively, the male is sired by a different locally mating dad with
+ probability 
+\begin_inset Formula $\ell(n_{\mathrm{m}}-1)/n_{\mathrm{m}}$
+\end_inset
+
+, so that identity is given by 
+\begin_inset Formula $(1/2)(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{P}}$
+\end_inset
+
+ can be derived in the same fashion, but note that 
+\begin_inset Formula $1/n_{\mathrm{m}}$
+\end_inset
+
+ reflect the probability that one samples the same individual, so that the
+ father is necessarily the same regardless of whether this father is from
+ the local or a nonlocal patch.
+\end_layout
+
+\begin_layout Standard
 Relatedness coefficients 
 \begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{P}}$
 \end_inset
@@ -1318,10 +1899,10 @@ Relatedness coefficients
  in the case of paternal expression are given by
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvf}\\
-r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvm}\\
-r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:diploid:PC:rmjuvf}\\
-r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:PC:rmjuvm}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:diploid:PC:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:PC:rmjuvm}
 \end{align}
 
 \end_inset
@@ -1330,11 +1911,18 @@ r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mm}}.\la
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - maternally inherited alleles expressed in offspring (imprinting)
+Maternally inherited alleles expressed in offspring (imprinting)
 \end_layout
 
 \begin_layout Standard
-For the case of expression by a maternally inherited allele (MI), we have
+We denote relatedness between a phenotype caused by a maternally inherited
+ allele (MI) in the actor and a focal allele in the recipient by the superscript
+ 
+\begin_inset Formula $\mathrm{MI}$
+\end_inset
+
+.
+ We then have
 \begin_inset Formula 
 \begin{align}
 r_{i\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:diploid:MI:ri}
@@ -1367,32 +1955,59 @@ Regarding the first line, relatedness coefficients are 1 as a maternally
 \end_inset
 
 .
+ Note that the probability of local mating 
+\begin_inset Formula $\ell$
+\end_inset
+
+ do not explicitly occur in eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:MI:rownjuvM"
+
+\end_inset
+
+), as in case of maternal inheritance one samples alleles of two adult local
+ breeders (male and female), rather than between father and offspring (in
+ which case 
+\begin_inset Formula $\ell$
+\end_inset
+
+ matters).
 \end_layout
 
 \begin_layout Standard
-Relatedness coefficients between a maternally-inherited allele in a randomly
- sampled adult breeder (female and male respectively) and the focal adult
- female breeder are given by
+Relatedness coefficients between the focal adult female (male) breeder and
+ a maternally-inherited allele in a randomly sampled adult breeder (female
+ and male respectively, sampled with replacement) and 
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rf->f}\\
-r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rf->m}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MI:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MI:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MI:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{m}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)++\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MI:rm->m}
 \end{align}
 
 \end_inset
 
-as with 
-\begin_inset Formula $1/2$
-\end_inset
-
- one samples a maternally inherited allele in the focal adult female breeder,
- so that with probability 
+Regarding the first line, with probability 
 \begin_inset Formula $1/n_{\mathrm{f}}$
 \end_inset
 
- both share the same parent and the probability of identity is given by
- 
-\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+, we sample the same focal adult female again.
+ With probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+ we sample the maternally inherited allele in the focal recipient, which
+ is identical to the MI-allele in the actor with probability 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Alternatively, we sample the paternally inherited allele in the recipient,
+ so that identity is given by 
+\begin_inset Formula $\ell\hat{Q}_{\mathrm{fm}}$
 \end_inset
 
 .
@@ -1400,8 +2015,28 @@ as with
 \begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
 \end_inset
 
- both share different parents so that identity is given by 
-\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+ the randomly sampled adult female is distinct from the focal so that relatednes
+s of the focal's maternally and paternally inherited allele to the actors
+ MI-allele is given by 
+\begin_inset Formula $(1/2)(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}})$
+\end_inset
+
+.
+ Regarding the second line, the randomly sampled adult male is necessarily
+ distinct from the focal adult female.
+ Consequently, with probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+, they share the same mother.
+ With probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+ the maternally inherited allele is sampled in the focal, which is identical
+ to the maternally inherited allele in the sampled adult male actor with
+ probability 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
 \end_inset
 
 .
@@ -1409,31 +2044,27 @@ as with
 \begin_inset Formula $1/2$
 \end_inset
 
- one samples a paternally inherited allele in the focal adult female breeder,
- so that identity is given by 
-\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+, the paternally inherited allele is sampled in the focal, which is identical
+ to maternally inherited allele in the sampled adult male actor with probability
+ 
+\begin_inset Formula $\ell Q_{\mathrm{fm}}$
 \end_inset
 
 .
- 
+ The remainder can be derived in a similar fashion.
 \end_layout
 
 \begin_layout Standard
 Relatedness coefficients between a maternally-inherited allele in a randomly
  sampled adult breeder (female and male respectively) and the focal adult
- male breeder are given by
-\begin_inset Formula 
-\begin{align}
-r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rm->f}\\
-r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}},\label{eq:relatedness:diploid:MI:rm->m}
-\end{align}
+ male breeder are given bywhich can be derived in the same way as previously.
+ 
+\end_layout
 
-\end_inset
-
-which can be derived in the same way as previously.
- Relatedness coefficients between a maternally-inherited allele in a randomly
- sampled juvenile breeder (female and male respectively) and the focal adult
- female breeder are given by
+\begin_layout Standard
+Relatedness coefficients between the focal adult female breeder an a maternally-
+inherited allele in a randomly sampled juvenile breeder (female and male
+ respectively) are given by
 \begin_inset Formula 
 \begin{align}
 r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:MI:rfjuvf}\\
@@ -1471,16 +2102,104 @@ Relatedness coefficients between a maternally-inherited allele in a randomly
 \begin_inset Formula 
 \begin{align}
 r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MI:rmjuvf}\\
-r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MI:rmjuvm}
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}},\label{eq:relatedness:diploid:MI:rmjuvm}
+\end{align}
+
+\end_inset
+
+reflecting the identity of the focal allele in the adult male recipient
+ and alleles present in the mother (which necessarily will be inherited
+ to her offspring).
+\end_layout
+
+\begin_layout Subsubsection
+Paternally inherited alleles expressed in offspring (imprinting)
+\end_layout
+
+\begin_layout Standard
+We denote relatedness of paternally inherited alleles by the superscript
+ 
+\begin_inset Formula $\mathrm{PI}$
+\end_inset
+
+.
+ We then have
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{PI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{PI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:diploid:PI:ri}
+\end{align}
+
+\end_inset
+
+as we are interested in the relatedness between a focal gene copy (present
+ in a focal adult female and male respectively) and the paternally inherited
+ allele present in the same body.
+ Furthermore,
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{PI}} & =\ell\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{PI}}=\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PI:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{PI}} & =1,\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{PI}}=1.\label{eq:relatedness:diploid:PI:rownjuvM}
+\end{align}
+
+\end_inset
+
+Note that 
+\begin_inset Formula $\ell$
+\end_inset
+
+ occurs in the first line (in contrast to eq.
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:MI:rownjuvF"
+
+\end_inset
+
+]), as the probability of identity between a focal allele in a female and
+ a paternally inherited allele is conditional upon the probability 
+\begin_inset Formula $\ell$
+\end_inset
+
+ that the latter allele is from a male in the local patch.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between the focal adult female breeder and a paternally
+-inherited allele in a randomly sampled adult breeder (female and male respectiv
+ely) are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{PI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\ell\left(\hat{Q}_{\mathrm{fm}}+\ell\hat{Q}_{\mathrm{mm}}\right)\label{eq:relatedness:diploid:PI:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{PI}} & =\frac{1}{2}\ell\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:PI:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{PI}} & =\frac{1}{2}\ell\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:PI:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{PI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{m}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:PI:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between the focal adult female breeder and a paternally
+-inherited allele in a randomly sampled juvenile breeder (female and male
+ respectively) are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{PI}} & =\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PI:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{PI}} & =\ell\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:PI:rfjuvm}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between a paternally-inherited allele in a randomly
+ sampled juvenile breeder (female and male respectively) and the focal adult
+ male breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{PI}} & =\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)\label{eq:relatedness:diploid:PI:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:PI:rmjuvm}
 \end{align}
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection
-Relatedness - paternally inherited alleles
 \end_layout
 
 \begin_layout Subsection
@@ -1504,7 +2223,7 @@ The coefficient of consanguinity
 l is given by
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{f}} & =\frac{1}{2}\left(1+Q_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:Qf}\\
+Q_{\mathrm{f}} & =\frac{1}{2}\left(1+\ell Q_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:Qf}\\
 Q_{\mathrm{m}} & =1.\label{eq:relatedness:haplodiploid:Qm}
 \end{align}
 
@@ -1513,8 +2232,8 @@ Q_{\mathrm{m}} & =1.\label{eq:relatedness:haplodiploid:Qm}
 Coefficients of consanguinity between juveniles are
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{ff}}^{\mathrm{j}} & =\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:haplodiploid:Qffj}\\
-Q_{\mathrm{fm}}^{\mathrm{j}} & =Q_{\mathrm{mf}}^{\mathrm{j}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:Qfmj}\\
+Q_{\mathrm{ff}}^{\mathrm{j}} & =\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}\ell Q_{\mathrm{fm}}+\frac{1}{4}\ell^{2}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:haplodiploid:Qffj}\\
+Q_{\mathrm{fm}}^{\mathrm{j}} & =Q_{\mathrm{mf}}^{\mathrm{j}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}\ell Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:Qfmj}\\
 Q_{\mathrm{mm}}^{\mathrm{j}} & =\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:Qmmj}
 \end{align}
 
@@ -1542,7 +2261,56 @@ Identity to the focal allele within male and female adult actors is then
  given by 
 \begin_inset Formula 
 \begin{align}
-r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=1\label{eq:relatedness:haplodiploid:ri}
+r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=1.\label{eq:relatedness:haplodiploid:ri}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients of focal female or male adult recipients to their
+ own offspring are given by 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:haplodiploid:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:rownjuvM}
+\end{align}
+
+\end_inset
+
+Note that 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}$
+\end_inset
+
+ is not multiplied by the probability of local mating 
+\begin_inset Formula $\ell$
+\end_inset
+
+ as it calculates relatedness between any focal adult breeder and any focal
+ adult female breeder who passed on her allele to her son.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between alleles in a randomly sampled adult breeder
+ (female and male respectively) and the focal adult male breeder are given
+ by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:haplodiploid:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:haplodiploid:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}} & =\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:haplodiploid:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between alleles in a randomly sampled juvenile
+ breeder (female and male respectively) and the focal adult female (or male)
+ breeder are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}} & =\frac{1}{2}\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:rmjuvm}
 \end{align}
 
 \end_inset
@@ -1551,11 +2319,174 @@ r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=1\label{eq:relatedness
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - maternal expression
+Expression by mother
+\end_layout
+
+\begin_layout Standard
+Identity to the focal allele within male and female adult actors is then
+ given by
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{f}}.\label{eq:relatedness:haplodiploid:MC:ri}
+\end{align}
+
+\end_inset
+
+Relatedness between a focal adult female (or male) and their own offspring
+ in case of maternal expression is given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{f}}\label{eq:relatedness:haplodiploid:MC:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:MC:rownjuvM}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between a focal adult female and any randomly sampled
+ adult female (sampled with replacement) when phenotypes are maternally
+ expressed are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:MC:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{M}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:MC:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{M}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MC:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{M}} & =\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{ff}}.\label{eq:relatedness:haplodiploid:MC:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ between the focal allele in an adult female or male and any locally born
+ juvenile of sex 
+\begin_inset Formula $x$
+\end_inset
+
+ in the case of maternal expression are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MC:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MC:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:MC:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:MC:rmjuvm}
+\end{align}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - expression by maternally inherited alleles
+Paternal expression
+\end_layout
+
+\begin_layout Standard
+Identity to the focal allele within male and female adult actors is then
+ given by
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{P}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:haplodiploid:PC:ri}
+\end{align}
+
+\end_inset
+
+where we assume that paternal effects do not affect male offspring.
+ In that case, 
+\begin_inset Formula $r_{i\mathrm{m}}^{\mathrm{P}}$
+\end_inset
+
+ reflects the default relatedness between any focal allele in the adult
+ male and itself, which is 
+\begin_inset Formula $\hat{Q}_{\mathrm{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Relatedness between a focal adult female (or male) and their own offspring
+ in case of paternal expression is given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{P}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:haplodiploid:PC:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right),\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{P}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:PC:rownjuvM}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between a focal adult female and any randomly sampled
+ adult female when phenotypes are maternally expressed are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{m}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:PC:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{P}} & =\frac{1}{2}\ell\frac{1}{n_{\mathrm{m}}}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\ell\left(\ell\hat{Q}_{\mathrm{mm}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:PC:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{P}} & =\ell Q_{\mathrm{mf}}\label{eq:relatedness:haplodiploid:PC:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{P}} & =\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:haplodiploid:PC:rm->m}
+\end{align}
+
+\end_inset
+
+Regarding the third line, we need the probability of identity between the
+ focal adult male and a male in the previous generation, who fathered the
+ randomly chosen female.
+ This is the probability of identity between the focal male's mother and
+ a locally mating male in the same generation, hence 
+\begin_inset Formula $\ell\hat{Q}_{\mathrm{mf}}$
+\end_inset
+
+.
+ Finally, relatedness between an adult focal male and another male is given
+ by the default probability of identity between adult males (see offspring
+ expression in eq.
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:haplodiploid:rm->m"
+
+\end_inset
+
+]), as paternal effects are absent on haploid males.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ between the focal allele in an adult female or male and any locally born
+ juvenile of sex 
+\begin_inset Formula $x$
+\end_inset
+
+ in the case of paternal expression are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PC:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:PC:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PC:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:PC:rmjuvm}
+\end{align}
+
+\end_inset
+
+Calculation is again straightforward: note again that paternal effects are
+ assumed absent in haploid males, so in these cases, relatedness is given
+ by default coefficients of relatedness without paternal effects (see offspring
+ expression).
+\end_layout
+
+\begin_layout Subsubsection
+Expression by maternally inherited alleles (imprinting)
 \end_layout
 
 \begin_layout Standard
@@ -1573,13 +2504,95 @@ r_{i\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm
 as the identity between the maternally inherited allele and the focal allele
  is identical to the within-individual relatedness coefficient for each
  sex.
- Similarly, relatedness coefficients between a maternally-inherited allele
- in a focal's own daughter ('own juv,f') and son ('own juv,m') (who express
- the focal phenotype) and focal alleles in a focal mother are given by 
+ Similarly, relatedness coefficients between the focal allele present in
+ an adult female (male) and a maternally-inherited allele in a focal's own
+ daughter ('own juv,f') and son ('own juv,m') are given by 
 \begin_inset Formula 
 \begin{align}
 r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =1,\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=1\label{eq:relatedness:haplodiploid:MI:rownjuvF}\\
 r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:MI:rownjuvM}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between the focal allele in an adult female (male)
+ breeder and a maternally-inherited allele in a randomly sampled adult breeder
+ (female and male respectively) and are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:MI:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{f}}+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\left(\hat{Q}_{\mathrm{ff}}+\ell\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:haplodiploid:MI:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MI:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{m}}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MI:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between the focal adult female (male) breeder an
+ a maternally-inherited allele in a randomly sampled juvenile breeder (female
+ and male respectively) are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:MI:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}},\label{eq:relatedness:haplodiploid:MI:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:MI:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:MI:rmjuvm}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Expression by paternally inherited alleles (imprinting)
+\end_layout
+
+\begin_layout Standard
+For paternal inheritance (PI), we then have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{PI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{PI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:haplodiploid:PI:ri}
+\end{align}
+
+\end_inset
+
+as we are interested in the relatedness between a focal gene copy (present
+ in a focal adult female and male respectively) and the paternally inherited
+ allele present in the same body.Furthermore,
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{PI}} & =\ell\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{PI}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:haplodiploid:PI:rownjuvF}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{PI}} & =1,\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}^{\mathrm{PI}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:haplodiploid:PI:rownjuvM}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between the focal adult female (male) breeder and
+ a paternally-inherited allele in a randomly sampled adult breeder (female
+ and male respectively) are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{PI}} & =\frac{1}{2}\frac{1}{n_{\mathrm{f}}}\left(1+\ell\hat{Q}_{\mathrm{fm}}\right)+\frac{1}{2}\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\ell\left(\hat{Q}_{\mathrm{fm}}+\ell\hat{Q}_{\mathrm{mm}}\right)\label{eq:relatedness:haplodiploid:PI:rf->f}\\
+r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{PI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PI:rf->m}\\
+r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{PI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PI:rm->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{PI}} & =\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:haplodiploid:PI:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between the focal adult female (male) breeder and
+ a paternally-inherited allele in a randomly sampled juvenile breeder (female
+ and male respectively) are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{PI}} & =\ell\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PI:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{PI}} & =\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}.\label{eq:relatedness:haplodiploid:PI:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{PI}} & =\ell\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}\right)\label{eq:relatedness:haplodiploid:PI:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{PI}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:PI:rmjuvm}
 \end{align}
 
 \end_inset
