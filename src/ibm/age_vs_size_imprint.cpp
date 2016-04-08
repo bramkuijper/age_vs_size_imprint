@@ -38,6 +38,7 @@ double sdmu = 0;
 double df = 0;
 double dm = 0;
 double q = 0;
+double l = 1.0;
 double k = 0;
 size_t type = 0;
 bool diploid = false;
@@ -109,8 +110,9 @@ void init_arguments(int argc, char *argv[])
     dm = atof(argv[4]);
     k = atof(argv[5]);
     q = atof(argv[6]);
-    diploid = atoi(argv[7]);
-    type = atoi(argv[8]);
+    l = atof(argv[7]);
+    diploid = atoi(argv[8]);
+    type = atoi(argv[9]);
 
     Individual::is_diploid = diploid;
 }
@@ -122,7 +124,6 @@ void init_pop()
 
     // obtain a seed from current nanosecond count
 	seed = get_nanoseconds();
-    seed = 729435295;
     // set up the random number generators
     // (from the gnu gsl library)
     gsl_rng_env_setup();
@@ -266,19 +267,21 @@ void make_juveniles()
     double exact_clutch;
     size_t clutch_size;
 
-    // store current father
-    size_t father;
-
     // store current sex of offspring
     bool is_female;
 
     // cumulative distribution of father's effort
-    double cumul_male_effort[Nmp];
+    double cumul_male_effort[2*Nmp];
 
     double sum_male_effort = 0;
 
     double cumul_deviate;
-    
+
+    // variables to store the nonlocally mating males
+    Individual nonlocal_males[Nmp];
+    size_t nonlocal_patch;
+    size_t nonlocal_id;
+
     // generate offspring on each patch
     for (size_t i = 0; i < Npatches; ++i)
     {
@@ -297,8 +300,25 @@ void make_juveniles()
 
         for (size_t j = 0; j < Nmp; ++j)
         {
-            cumul_male_effort[j] = sum_male_effort + pow(k * MetaPop[i].localsM[j].phen,3);
+            cumul_male_effort[j] = sum_male_effort + (1-l) * pow(k * MetaPop[i].localsM[j].phen,3);
             sum_male_effort = cumul_male_effort[j];
+        }
+
+        for (size_t j = 0; j < Nmp; ++j)
+        {
+            do {
+                 nonlocal_patch = gsl_rng_uniform_int(r, Npatches);
+            }
+            while(nonlocal_patch == i);
+
+            nonlocal_id = gsl_rng_uniform_int(r, Nmp);
+
+            nonlocal_males[j] = MetaPop[nonlocal_patch].localsM[nonlocal_id];
+
+            assert(nonlocal_males[j].phen >= -10);
+
+            cumul_male_effort[j + Nmp] = sum_male_effort + l * pow(k * nonlocal_males[j].phen,3);
+            sum_male_effort = cumul_male_effort[j + Nmp];
         }
 
         clutch_size = 0;
@@ -316,31 +336,37 @@ void make_juveniles()
                 ++clutch_size;
             }
 
-
             // create kids and reduce parental resources
             for (size_t egg_i = 0; egg_i < clutch_size; ++egg_i)
             {
                 // select male based on his reproductive effort
                 cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
 
-                father = Nmp+1;
+                Individual father;
 
-                for (size_t male_i = 0; male_i < Nmp; ++male_i)
+                for (size_t male_i = 0; male_i < 2*Nmp; ++male_i)
                 {
                     if (cumul_deviate <= cumul_male_effort[male_i])
                     {
-                        father = male_i;
+                        if (male_i >= Nmp)
+                        {
+                            father = nonlocal_males[male_i - Nmp];
+                        }
+                        else
+                        {
+                            father = MetaPop[i].localsM[male_i];
+                        }
                         break;
                     }
                 }
 
-                assert(father >= 0 && father < Nmp);
+                assert(father.phen >-10);
 
                 Individual Kid; 
 
                 is_female = gsl_rng_uniform(r) < 0.5;
 
-                create_kid(MetaPop[i].localsF[j],MetaPop[i].localsM[father],Kid, is_female);
+                create_kid(MetaPop[i].localsF[j],father,Kid, is_female);
 
 
                 // female or male
@@ -692,6 +718,7 @@ void write_parameters()
                 << "sdmu;" << sdmu << endl
                 << "q;" << q << endl
                 << "k;" << k << endl
+                << "l;" << l << endl
                 << "clutch;" << Clutch << endl
                 << "runtime;" << total_time << endl;
 }
@@ -702,7 +729,6 @@ int main(int argc, char * argv[])
     init_arguments(argc,argv);
     init_pop();
 
-    write_parameters();
     write_data_headers();
 
 
@@ -719,4 +745,5 @@ int main(int argc, char * argv[])
     }
 
     write_data();
+    write_parameters();
 }
