@@ -4,7 +4,7 @@ import numpy as np
 import math, sys
 
 nf_nm = [[2,2],[3,2],[2,3]]
-df = [ 0.5 ]
+df = [ 0.1, 0.5, 0.9 ]
 dm = list(np.arange(0,1.05,0.05))
 q = 1
 k = 1.0/3
