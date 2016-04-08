@@ -287,7 +287,6 @@ void make_juveniles()
     {
         // clear anything from the previous generation
         MetaPop[i].philsF.clear();
-        MetaPop[i].philsM.clear();
 
         // variable that takes into account
         // any beyond-the-minimum number of immigrants

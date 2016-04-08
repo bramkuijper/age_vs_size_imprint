@@ -12,13 +12,13 @@ k = 1.0/3
 type = [ 3, 4 ]
 diploid = [ 0, 1 ] 
 
-exe = "./xage_vs_size_imprint"
-#exe = "/home/uccoaku/age_vs_size_imprint/src/ibm/xage_vs_size_imprint"
+#exe = "./xage_vs_size_imprint"
+exe = "/home/uccoaku/age_vs_size_imprint/src/ibm/xage_vs_size_imprint"
 
 mu = 0.01
 sdmu = 0.02
 
-reps = 1
+reps = 3
 
 ctr = 0
 
