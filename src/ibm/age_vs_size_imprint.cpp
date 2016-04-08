@@ -196,7 +196,7 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
     size_t paternal_allele_f = diploid ? gsl_rng_uniform_int(r,2) : 0;
 
     // if in a haplodiploid male 
-    // assign no value
+    // assign no value (or f
     Kid.af[1] = !is_female && !diploid ? -1000 : Mut(father.af[paternal_allele_f]);
 
     // if female, determine phenotype
@@ -211,10 +211,10 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
                 Kid.phen = father.af[paternal_allele_f];
                 break;
             case 3: // maternal expression
-                Kid.phen = 0.5 * (mother.am[0] + mother.am[1]);
+                Kid.phen = 0.5 * (mother.af[0] + mother.af[1]);
                 break;
             case 4: // paternal expression
-                Kid.phen = diploid ? 0.5 * (father.am[0] + father.am[1]) : father.am[0];
+                Kid.phen = diploid ? 0.5 * (father.af[0] + father.af[1]) : father.af[0];
                 break;
             default: // normal allele
                 Kid.phen = .5 * (Kid.af[0] + Kid.af[1]);
