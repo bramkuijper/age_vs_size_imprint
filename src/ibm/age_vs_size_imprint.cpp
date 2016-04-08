@@ -122,18 +122,13 @@ void init_pop()
 
     // obtain a seed from current nanosecond count
 	seed = get_nanoseconds();
-    // set the seed to the random number generator
-    // stupidly enough, this can only be done by setting
-    // a shell environment parameter
-    stringstream s;
-    s << "GSL_RNG_SEED=" << setprecision(10) << seed;
-    putenv(const_cast<char *>(s.str().c_str()));
-
+    seed = 729435295;
     // set up the random number generators
     // (from the gnu gsl library)
     gsl_rng_env_setup();
     T = gsl_rng_default;
     r = gsl_rng_alloc(T);
+    gsl_rng_set(r, seed);
 
     // go through all patches
     for (size_t i = 0; i < Npatches; ++i)
@@ -196,7 +191,7 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
     size_t paternal_allele_f = diploid ? gsl_rng_uniform_int(r,2) : 0;
 
     // if in a haplodiploid male 
-    // assign no value
+    // assign no value (or f
     Kid.af[1] = !is_female && !diploid ? -1000 : Mut(father.af[paternal_allele_f]);
 
     // if female, determine phenotype
@@ -209,6 +204,12 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
                 break;
             case 2: // padumnal allele
                 Kid.phen = father.af[paternal_allele_f];
+                break;
+            case 3: // maternal expression
+                Kid.phen = 0.5 * (mother.af[0] + mother.af[1]);
+                break;
+            case 4: // paternal expression
+                Kid.phen = diploid ? 0.5 * (father.af[0] + father.af[1]) : father.af[0];
                 break;
             default: // normal allele
                 Kid.phen = .5 * (Kid.af[0] + Kid.af[1]);
@@ -233,6 +234,12 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
                 break;
             case 2: // padumnal allele
                 Kid.phen = diploid ? father.am[paternal_allele_m] : Kid.am[0];
+                break;
+            case 3: // maternal expression
+                Kid.phen = 0.5 * (mother.am[0] + mother.am[1]);
+                break;
+            case 4: // paternal expression, assumed to be absent for sons in haplodiploids
+                Kid.phen = diploid ? 0.5 * (father.am[0] + father.am[1]) : Kid.am[0];
                 break;
             default: // normal allele
                 Kid.phen = diploid ? .5 * (Kid.am[0] + Kid.am[1]) : Kid.am[0];
@@ -647,8 +654,29 @@ void write_data()
 
 void write_parameters()
 {
+    string str_imprint;
+
+    switch(type) {
+        case 1:
+            str_imprint = "madumnal";
+            break;
+        case 2:
+            str_imprint = "padumnal";
+            break;
+        case 3:
+            str_imprint = "maternal";
+            break;
+        case 4:
+            str_imprint = "paternal";
+            break;
+        default:
+            str_imprint = "offspring";
+            break;
+    }
+
+
     DataFile << endl << endl << "system;" << (diploid ? "diploid" : "haplodiploid") << endl
-                << "imprint;" << (type == 0 ? "offspring" : (type == 1 ? "madumnal" : "padumnal")) << endl
+                << "imprint;" << str_imprint << endl
                 << "patch;" << Npatches << endl
                 << "nfp;" << Nfp << endl
                 << "nmp;" << Nmp << endl
@@ -670,6 +698,7 @@ int main(int argc, char * argv[])
     init_arguments(argc,argv);
     init_pop();
 
+    write_parameters();
     write_data_headers();
 
 
@@ -686,5 +715,4 @@ int main(int argc, char * argv[])
     }
 
     write_data();
-    write_parameters();
 }

@@ -9,6 +9,7 @@
 \definecolor{slateblue}{RGB}{17, 83,128}
 \usepackage{doi}
 \end_preamble
+\options numbers,sort&compress
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -31,7 +32,7 @@
 \bibtex_command bibtex
 \index_command default
 \paperfontsize 12
-\spacing other 1.05
+\spacing single
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -56,7 +57,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine_type numerical
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -90,14 +91,455 @@
 \begin_body
 
 \begin_layout Title
-When should genomic imprinting affect sexual maturation?
+When Should Genomic Imprinting Affect Sexual Maturation?
+\end_layout
+
+\begin_layout Author
+Bram Kuijper
+\begin_inset Formula $^{1,2,3,4}$
+\end_inset
+
+ & Rufus A.
+ Johnstone
+\begin_inset Formula $^{5,6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{1})$
+\end_inset
+
+ CoMPLEX, Center of Mathematics and Physics in the Life Sciences and Experimenta
+l Biology, University College London, Gower Street, WC1 6BT, London, United
+ Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{2})$
+\end_inset
+
+ Department of Genetics, Evolution and Environment, University College London,
+ Gower Street, WC1 6BT, London, United Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{3})$
+\end_inset
+
+ Behaviour and Evolution Group, Department of Zoology, University of Cambridge,
+ Downing Street, CB2 3EJ Cambridge, United Kingdom
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{4})$
+\end_inset
+
+ a.kuijper@ucl.ac.uk
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula $^{5}$
+\end_inset
+
+) raj1003@cam.ac.uk
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang british
+Todo: change descriptions of relatedness so that the focal recipient comes
+ first in the description and then the actor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The age at which an individual starts to reproduce is a key life-history
+ trait with profound fitness consequences 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cole1954,Roff1984,Brommer1998,Roff2000,Roff2002,Brommer2002,Krueger2005"
+
+\end_inset
+
+.
+ Reproducing early increases the probability of realizing reproduction before
+ mortality, while delaying the timing of reproduction allows for the accumulatio
+n of more resources, often resulting in a larger fecundity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Blanckenhorn2000"
+
+\end_inset
+
+.
+ Consequently, a trade-off between juvenile survival and adult fitness arises,
+ suggesting that selection favors an optimal age of sexual maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Stearns1992,Roff2002"
+
+\end_inset
+
+.
+ However, age at sexual maturition has been shown to have a complicated
+ genetic architecture, commonly involving not only genes expressed by the
+ offspring itself, but also by genes expressed in the parent or grandparents
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hafer2011,Saastamoinen2013,Kruuk2015"
+
+\end_inset
+
+.
+ Moreover, recent studies find that age at maturity is also affected by
+ genomic imprinting 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Charalambous2007,Perry2014"
+
+\end_inset
+
+, thus involving differential expression of alleles dependent on their parent
+ of origin 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ferguson-Smith2011,Koehler2012"
+
+\end_inset
+
+.
+ This raises the question when and where genomic imprinting is expected
+ to underly the timing of sexual maturation.
+\end_layout
+
+\begin_layout Standard
+Although recent theoretical studies have started to assess in which ecological
+ and social contexts genomic imprinting is likely to evolve 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "reviewed in"
+key "Holman2014,Patten2014,Spencer2014"
+
+\end_inset
+
+, most of these studies focus on an abstract phenotype which only affects
+ offspring survival [
+\begin_inset CommandInset citation
+LatexCommand citealp
+before "e.g.,"
+key "Ubeda2010,Ubeda2011,Ubeda2012,Spencer2006,Spencer2009,Wolf2013"
+
+\end_inset
+
+ but see 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Wild2009,Farrell2015,VanCleve2010"
+
+\end_inset
+
+], thus ignoring most of the constraints and trade-offs underlying life-history
+ traits in reality.
+ To overcome this, here we assess the evolution of genomic imprinting in
+ a realistic life-history model on the evolution of age and size at sexual
+ maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roff1984,Roff2002,Johnstone2014"
+
+\end_inset
+
+, where faster maturation increases the probability of surviving to maturity
+ at the cost of a smaller adult size and thus lower fecundity.
+\end_layout
+
+\begin_layout Standard
+We study the evolution of genomic imprinting on age versus size at maturity
+ in a structured population, taking a demographically explicit approach
+ where local competition and relatedness arise from limited dispersal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rousset2004,Lion2011,Gardner2010"
+
+\end_inset
+
+.
+ Studying a demographical model of age versus size at maturity is essential
+ for two key reasons: first, local competition among relatives has been
+ repeatedly shown to affect various life-history traits 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pen2000,Ronce2004,Ronce2010,Lion2010a,Kuijper2015a"
+
+\end_inset
+
+, as it changes the trade-off between current and future reproduction 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pen2000"
+
+\end_inset
+
+.
+ Indeed, in a recent demographical model of age at sexual maturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Johnstone2014"
+
+\end_inset
+
+, we showed that the sex which experiences more local competition has an
+ accelerated rate of sexual maturity.
+ Second, relatedness asymmetries due to sex-biased dispersal and/or mating
+ skew are well-known to favor the evolution of genomic imprinting 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haig2000a,Brandvain2010,Brandvain2011,VanCleve2010,Ubeda2010"
+
+\end_inset
+
+.
+ This is because sex-biased dispersal leads to asymmetries in relatedness
+ between maternally versus paternally inherited alleles and their relatives,
+ so that differential gene expression is likely to evolve when the trait
+ in question affects interactions between relatives 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haig2000a"
+
+\end_inset
+
+.
+ Consequently, whether genomic imprinting affects age at sexual maturity
+ is likely to be strongly dependent on the degree of local competition and
+ sex differences in dispersal and/or mating skew.
+\end_layout
+
+\begin_layout Standard
+- To discuss: sex-limited versus not sex-limited
+\end_layout
+
+\begin_layout Section
+The model
+\end_layout
+
+\begin_layout Standard
+Our approach is to develop an evolutionary demographic model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hamilton1964a,Taylor1996,Rousset2004,Taylor2007,Lion2011,Lehmann2014"
+
+\end_inset
+
+ of the evolution of genomic imprinting on age at sexual maturation.
+ Consider a population distributed over infinitely many territories 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wright1931,Wright1951"
+
+\end_inset
+
+, in which individuals reproduce sexually and generations are nonoverlapping.
+ Each territory contains 
+\begin_inset Formula $n_{\text{f}}$
+\end_inset
+
+ adult female breeders and 
+\begin_inset Formula $n_{\text{m}}$
+\end_inset
+
+ adult male breeders.
+ Territories are linked by juvenile dispersal, so that newborn females (or
+ males) disperse to random territory with probability 
+\begin_inset Formula $d_{\mathrm{f}}$
+\end_inset
+
+ (
+\begin_inset Formula $d_{\mathrm{m}}$
+\end_inset
+
+) and remain on their natal patch with probability 
+\begin_inset Formula $h_{\mathrm{f}}=1-d_{\mathrm{f}}$
+\end_inset
+
+ (
+\begin_inset Formula $h_{\mathrm{m}}=1-d_{\mathrm{m}}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Similar to seminal models (e.g., 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roff1984,Stearns1986"
+
+\end_inset
+
+), we assume that there is a trade-off between survival as an offspring
+ and reproductive success as an adult, mediated by age at maturity, which
+ is 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ in females and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ in males.
+ Although qualitatively similar, the trade-off takes a slightly different
+ form dependent on the sex considered: in adult females, age at maturity
+ directly affects the number of offspring produced, while in adult males
+ age at maturity determines his fertilization success relative to other
+ males.
+ Consequently, females provide all investment in offspring, while males
+ compete for paternity.
+\end_layout
+
+\begin_layout Standard
+We will write 
+\begin_inset Formula $f(a)$
+\end_inset
+
+ for a female's fecundity or a male's relative success in competition for
+ paternity, where we assume that 
+\begin_inset Formula $f(a)$
+\end_inset
+
+ increases deceleratingly with 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ At the start of each generation, a focal female of age 
+\begin_inset Formula $a_{\mathrm{f}}^{i}$
+\end_inset
+
+ then produces a large number of offspring (in a 1:1 sex ratio) proportional
+ to her fecundity 
+\begin_inset Formula $f(a_{\mathrm{f}}^{i})$
+\end_inset
+
+, while the average fecundity in the local patch is given by 
+\begin_inset Formula $f(a_{\mathrm{f}})$
+\end_inset
+
+.
+ A focal male's share of fertilizations of all locally born young is then
+ given by 
+\begin_inset Formula $n_{\mathrm{f}}/n_{\mathrm{m}}\times f(a_{\mathrm{m}}^{i})/f(a_{\mathrm{m}})$
+\end_inset
+
+, where 
+\begin_inset Formula $n_{\mathrm{f}}/n_{\mathrm{m}}$
+\end_inset
+
+ reflects the average number of matings achieved by a single male, while
+ 
+\begin_inset Formula $f(a_{\mathrm{m}}^{i})/f(a_{\mathrm{m}})$
+\end_inset
+
+ reflects his fertilization success relative to the average fertilization
+ success by all males in the local patch.
+ Upon birth, female and male offspring survive with probability 
+\begin_inset Formula $s(a_{\mathrm{f}})$
+\end_inset
+
+ and 
+\begin_inset Formula $s(a_{\mathrm{m}})$
+\end_inset
+
+, where 
+\begin_inset Formula $s(\cdot)$
+\end_inset
+
+ strictly decreases with increasing 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+.
+ Female and male offspring who survive to maturity then disperse with respective
+ probabilities 
+\begin_inset Formula $d_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $d_{\mathrm{m}}$
+\end_inset
+
+, after which native and immigrant female and male offspring on each patch
+ compete for the 
+\begin_inset Formula $n_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{\mathrm{m}}$
+\end_inset
+
+ breeding positions vacated by the death of the previous generation.
+ Offspring who fail to claim a breeding position die, after which the life
+ cycle repeats itself.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Standard
+- mention other hypotheses on genomic imprinting: i.e., conflict versus coadaptati
+on 
+\end_layout
+
+\begin_layout Section
+Figures
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename para
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "/home/bram/Projects/databases/transgenerational"
-options "bram"
+options "procbnumer"
 
 \end_inset
 
@@ -520,6 +962,29 @@ Q_{\mathrm{f}} & =Q_{\mathrm{m}}=\frac{1}{2}\left(1+Q_{\mathrm{fm}}\right)\label
 
 \end_inset
 
+To calculate 
+\begin_inset Formula $Q_{\mathrm{fm}}$
+\end_inset
+
+ we need to derive expressions for the coefficients of consanguinity between
+ juveniles
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}}^{\mathrm{j}} & =Q_{\mathrm{fm}}^{\mathrm{j}}=Q_{\mathrm{mf}}^{\mathrm{j}}=Q_{\mathrm{mm}}^{\mathrm{j}}=\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:QffJ}
+\end{align}
+
+\end_inset
+
+We then have the following coefficients of consanguinity in adults
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qff}\\
+Q_{\mathrm{fm}} & =Q_{\mathrm{mf}}=h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qfm}\\
+Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}},\label{eq:relatedness:diploid:Qmm}
+\end{align}
+
+\end_inset
+
 where 
 \begin_inset Formula $h_{\mathrm{f}}=1-d_{\mathrm{f}}$
 \end_inset
@@ -535,33 +1000,10 @@ where
 
  reflects the coefficient of consanguinity between an adult female and male
  that are randomly sampled in the local patch.
- To calculate 
-\begin_inset Formula $Q_{\mathrm{fm}}$
-\end_inset
-
- we need to derive expressions for the coefficients of consanguinity between
- juveniles
-\begin_inset Formula 
-\begin{align}
-Q_{\mathrm{ff}}^{\mathrm{j}} & =Q_{\mathrm{fm}}^{\mathrm{j}}=Q_{\mathrm{mf}}^{\mathrm{j}}=Q_{\mathrm{mm}}^{\mathrm{j}}=\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:diploid:QffJ}
-\end{align}
-
-\end_inset
-
-We then have
-\begin_inset Formula 
-\begin{align}
-Q_{\mathrm{ff}} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qff}\\
-Q_{\mathrm{fm}} & =Q_{\mathrm{mf}}=h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}}\label{eq:relatedness:diploid:Qfm}\\
-Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}}.\label{eq:relatedness:diploid:Qmm}
-\end{align}
-
-\end_inset
-
-
+ 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Relatedness - offspring expression of age at maturity
 \end_layout
 
@@ -651,14 +1093,248 @@ r_{\mathrm{m}\rightarrow\mathrm{juvm}} & =\frac{1}{2}\left(\frac{1}{n_{\mathrm{m
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - maternally inherited alleles
+Relatedness - maternal expression
 \end_layout
 
 \begin_layout Standard
-For maternal inheritance (MI), we then have
+The phenotype of a focal adult female and male is now determined by their
+ mothers.
+ Hence, 
+\begin_inset Formula $r_{i\mathrm{f}}^{\mathrm{M}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{i\mathrm{m}}^{\mathrm{M}}$
+\end_inset
+
+ denote relatedness between the focal and itself, where the superscript
+ 
+\begin_inset Formula $\mathrm{M}$
+\end_inset
+
+ denotes that the phenotype is expressed by their mothers.
+ We now have 
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{M}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:MC:ri}
+\end{align}
+
+\end_inset
+
+with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, the maternally inherited allele is sampled in the focal adult recipient,
+ which is identical to the focal allele expressed by the adult's mother
+ with probability 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ Alternatively, with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, the paternally inherited allele is sampled in the focal adult parent,
+ which is identical to the focal allele expressed by the adult's mother
+ with probability 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
+Relatedness between a focal adult female (or male) and their own offspring
+ in case of maternal expression is given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{f}}+\hat{Q}_{\mathrm{fm}}\right)\label{eq:relatedness:diploid:MC:rfownjuvf}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{M}}=\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rmownjuvf}
+\end{align}
+
+\end_inset
+
+Regarding the first line, it follows an identical derivation as in eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:MC:ri"
+
+\end_inset
+
+).
+ Regarding the second line, a focal allele present in an adult male is related
+ to the mother expressing the phenotype with probability 
+\begin_inset Formula $Q_{\mathrm{fm}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients between a focal adult female and any randomly sampled
+ adult female when phenotypes are maternally expressed are given by 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{M}} & =r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{M}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MC:rf->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{M}} & =r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{M}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}\hat{Q}_{\mathrm{ff}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rm->m}
+\end{align}
+
+\end_inset
+
+What counts is relatedness between the focal adult recipient and the mother
+ of the other randomly sampled adult.
+ With probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, we sample the focal's maternally inherited allele copy.
+ With probability 
+\begin_inset Formula $1/n_{\mathrm{f}}$
+\end_inset
+
+, the other randomly sampled adult shares the same mother with the focal,
+ so that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{f}}$
+\end_inset
+
+.
+ With probability 
+\begin_inset Formula $(n_{\mathrm{f}}-1)/n_{\mathrm{f}}$
+\end_inset
+
+, both have different mothers, so that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{ff}}$
+\end_inset
+
+.
+ Alternatively, with probability 
+\begin_inset Formula $1/2$
+\end_inset
+
+, the paternally inherited allele is sampled in the focal recipient, so
+ that identity is given by 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Relatedness coefficients 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{juv}x}^{\mathrm{M}}$
+\end_inset
+
+ between the focal allele in an adult female or male and any locally born
+ juvenile of sex 
+\begin_inset Formula $x$
+\end_inset
+
+ in the case of maternal expression are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:MC:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{ff}}\label{eq:relatedness:diploid:MC:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:MC:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{M}} & =\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:MC:rmjuvm}
+\end{align}
+
+\end_inset
+
+Again, what matters is relatedness between the focal recipient adult (female
+ or male) and the mother of the randomly sampled locally born juvenile,
+ which are the adult coefficients of consanguinity.
+\end_layout
+
+\begin_layout Subsubsection
+Relatedness - paternal expression
+\end_layout
+
+\begin_layout Standard
+The phenotype of a focal adult female and male is now determined by their
+ father.
+ Hence, 
+\begin_inset Formula $r_{i\mathrm{f}}^{\mathrm{P}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{i\mathrm{m}}^{\mathrm{P}}$
+\end_inset
+
+ denote relatedness between the focal and itself, where the superscript
+ 
+\begin_inset Formula $\mathrm{P}$
+\end_inset
+
+ denotes that the phenotype is paternally expressed.
+ We now have 
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}}^{\mathrm{P}} & =\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right),\ r_{i\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:ri}
+\end{align}
+
+\end_inset
+
+Relatedness between a focal adult female (or male) and their own offspring
+ in case of paternal expression is given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PC:rfownjuvf}\\
+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\hat{Q}_{\mathrm{m}}+\hat{Q}_{\mathrm{fm}}\right).\label{eq:relatedness:diploid:PC:rmownjuvf}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients between a focal adult female and any randomly sampled
+ adult female when phenotypes are paternally expressed are given by 
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{f}}^{\mathrm{P}} & =r_{\mathrm{f}\rightarrow\mathrm{m}}^{\mathrm{P}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}\label{eq:relatedness:diploid:PC:rf->f}\\
+r_{\mathrm{m}\rightarrow\mathrm{m}}^{\mathrm{P}} & =r_{\mathrm{m}\rightarrow\mathrm{f}}^{\mathrm{P}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{m}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{m}}}\hat{Q}_{\mathrm{mm}}\right)+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:PC:rm->m}
+\end{align}
+
+\end_inset
+
+Relatedness coefficients 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{juv}x}^{\mathrm{P}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\mathrm{juv}x}^{\mathrm{P}}$
+\end_inset
+
+ between the focal allele in an adult female or male and any locally born
+ juvenile of sex 
+\begin_inset Formula $x$
+\end_inset
+
+ in the case of paternal expression are given by
+\begin_inset Formula 
+\begin{align}
+r_{\mathrm{f}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvf}\\
+r_{\mathrm{f}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mf}}\label{eq:relatedness:diploid:PC:rfjuvm}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvf}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mm}}\label{eq:relatedness:diploid:PC:rmjuvf}\\
+r_{\mathrm{m}\rightarrow\mathrm{juvm}}^{\mathrm{P}} & =\hat{Q}_{\mathrm{mm}}.\label{eq:relatedness:diploid:PC:rmjuvm}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Relatedness - maternally inherited alleles expressed in offspring (imprinting)
+\end_layout
+
+\begin_layout Standard
+For the case of expression by a maternally inherited allele (MI), we have
 \begin_inset Formula 
 \begin{align}
 r_{i\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}^{\mathrm{MI}}=\hat{Q}_{\mathrm{m}},\label{eq:relatedness:diploid:MI:ri}
@@ -811,46 +1487,75 @@ Relatedness - paternally inherited alleles
 Relatedness coefficients for haplodiploidy and X-linked geness
 \end_layout
 
+\begin_layout Subsubsection
+Coefficients of consanguinity
+\end_layout
+
 \begin_layout Standard
-We have
+The coefficient of consanguinity 
+\begin_inset Formula $Q_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{\mathrm{m}}$
+\end_inset
+
+ between two randomly sampled allele copies in the same female or male individua
+l is given by
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{f}} & =\frac{1}{2}\left(1+h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}\right),\ Q_{\mathrm{m}}=1,\label{eq:relatedness:haplodiploid:Qf}
+Q_{\mathrm{f}} & =\frac{1}{2}\left(1+Q_{\mathrm{fm}}\right)\label{eq:relatedness:haplodiploid:Qf}\\
+Q_{\mathrm{m}} & =1.\label{eq:relatedness:haplodiploid:Qm}
 \end{align}
 
 \end_inset
 
-and
+Coefficients of consanguinity between juveniles are
 \begin_inset Formula 
 \begin{align}
-Q_{\mathrm{ff}}^{\mathrm{j}} & =\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right)\label{eq:relatedness:haplodiploid:Qffj}\\
+Q_{\mathrm{ff}}^{\mathrm{j}} & =\frac{1}{4}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}+\frac{1}{4}\left(\frac{1}{n_{\mathrm{m}}}Q_{\mathrm{m}}+\frac{n_{\mathrm{m}}-1}{n_{\mathrm{m}}}Q_{\mathrm{mm}}\right).\label{eq:relatedness:haplodiploid:Qffj}\\
 Q_{\mathrm{fm}}^{\mathrm{j}} & =Q_{\mathrm{mf}}^{\mathrm{j}}=\frac{1}{2}\left(\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\right)+\frac{1}{2}Q_{\mathrm{fm}}\label{eq:relatedness:haplodiploid:Qfmj}\\
-Q_{\mathrm{mm}}^{\mathrm{j}} & =\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}},\label{eq:relatedness:haplodiploid:Qmmj}
+Q_{\mathrm{mm}}^{\mathrm{j}} & =\frac{1}{n_{\mathrm{f}}}Q_{\mathrm{f}}+\frac{n_{\mathrm{f}}-1}{n_{\mathrm{f}}}Q_{\mathrm{ff}}\label{eq:relatedness:haplodiploid:Qmmj}
 \end{align}
 
 \end_inset
 
-while adult coefficients of consanguinity can then again be calculated from
- eqns.
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:relatedness:diploid:Qff"
+and coefficients of consanguinity between adults are then
+\begin_inset Formula 
+\begin{align}
+Q_{\mathrm{ff}} & =h_{\mathrm{f}}^{2}Q_{\mathrm{ff}}^{\mathrm{j}}\label{eq:relatedness:haplodiploid:Qff}\\
+Q_{\mathrm{fm}} & =Q_{\mathrm{mf}}=h_{\mathrm{f}}h_{\mathrm{m}}Q_{\mathrm{fm}}^{\mathrm{j}}\label{eq:relatedness:haplodiploid:Qfm}\\
+Q_{\mathrm{mm}} & =h_{\mathrm{m}}^{2}Q_{\mathrm{mm}}^{\mathrm{j}},\label{eq:relatedness:haplodiploid:Qmm}
+\end{align}
 
 \end_inset
 
--
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:relatedness:diploid:Qmm"
 
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Subsubsection
-Relatedness - maternally inherited alleles
+Relatedness - offspring expression
+\end_layout
+
+\begin_layout Standard
+Identity to the focal allele within male and female adult actors is then
+ given by 
+\begin_inset Formula 
+\begin{align}
+r_{i\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{i\mathrm{m}}=1\label{eq:relatedness:haplodiploid:ri}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Relatedness - maternal expression
+\end_layout
+
+\begin_layout Subsubsection
+Relatedness - expression by maternally inherited alleles
 \end_layout
 
 \begin_layout Standard
@@ -879,10 +1584,6 @@ r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}^{\mathrm{MI}} & =\hat{Q}_{\ma
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
