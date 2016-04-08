@@ -122,18 +122,13 @@ void init_pop()
 
     // obtain a seed from current nanosecond count
 	seed = get_nanoseconds();
-    // set the seed to the random number generator
-    // stupidly enough, this can only be done by setting
-    // a shell environment parameter
-    stringstream s;
-    s << "GSL_RNG_SEED=" << setprecision(10) << seed;
-    putenv(const_cast<char *>(s.str().c_str()));
-
+    seed = 729435295;
     // set up the random number generators
     // (from the gnu gsl library)
     gsl_rng_env_setup();
     T = gsl_rng_default;
     r = gsl_rng_alloc(T);
+    gsl_rng_set(r, seed);
 
     // go through all patches
     for (size_t i = 0; i < Npatches; ++i)
@@ -707,6 +702,7 @@ int main(int argc, char * argv[])
     init_arguments(argc,argv);
     init_pop();
 
+    write_parameters();
     write_data_headers();
 
 
@@ -723,5 +719,4 @@ int main(int argc, char * argv[])
     }
 
     write_data();
-    write_parameters();
 }
