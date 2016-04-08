@@ -122,7 +122,6 @@ void init_pop()
 
     // obtain a seed from current nanosecond count
 	seed = get_nanoseconds();
-    seed = 729435295;
     // set up the random number generators
     // (from the gnu gsl library)
     gsl_rng_env_setup();
@@ -698,7 +697,6 @@ int main(int argc, char * argv[])
     init_arguments(argc,argv);
     init_pop();
 
-    write_parameters();
     write_data_headers();
 
 
@@ -715,4 +713,5 @@ int main(int argc, char * argv[])
     }
 
     write_data();
+    write_parameters();
 }
