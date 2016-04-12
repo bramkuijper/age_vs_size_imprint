@@ -14,6 +14,7 @@
 #include <gsl/gsl_randist.h>
 #include "bramauxiliary.h"
 #include "individual.hpp"
+#include <string.h>
 
 
 //#define NDEBUG
@@ -60,6 +61,31 @@ int seed = -1;
 // skip the number of generations in output
 // to prevent output files from becoming too large
 size_t skip = 1;
+
+// see http://stackoverflow.com/questions/63166/how-to-determine-cpu-and-memory-consumption-from-inside-a-process 
+int parseLine(char* line){
+    int i = strlen(line);
+    while (*line < '0' || *line > '9') line++;
+    line[i-3] = '\0';
+    i = atoi(line);
+    return i;
+}
+
+int getValue(){ //Note: this value is in KB!
+    FILE* file = fopen("/proc/self/status", "r");
+    int result = -1;
+    char line[128];
+
+
+    while (fgets(line, 128, file) != NULL){
+        if (strncmp(line, "VmRSS:", 6) == 0){
+            result = parseLine(line);
+            break;
+        }
+    }
+    fclose(file);
+    return result;
+}
 
 // 
 struct Patch
@@ -130,6 +156,8 @@ void init_pop()
     T = gsl_rng_default;
     r = gsl_rng_alloc(T);
     gsl_rng_set(r, seed);
+
+
 
     // go through all patches
     for (size_t i = 0; i < Npatches; ++i)
@@ -282,11 +310,13 @@ void make_juveniles()
     size_t nonlocal_patch;
     size_t nonlocal_id;
 
+
     // generate offspring on each patch
     for (size_t i = 0; i < Npatches; ++i)
     {
         // clear anything from the previous generation
         MetaPop[i].philsF.clear();
+        MetaPop[i].philsM.clear();
 
         // variable that takes into account
         // any beyond-the-minimum number of immigrants
@@ -335,13 +365,12 @@ void make_juveniles()
                 ++clutch_size;
             }
 
+            Individual father;
             // create kids and reduce parental resources
             for (size_t egg_i = 0; egg_i < clutch_size; ++egg_i)
             {
                 // select male based on his reproductive effort
                 cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
-
-                Individual father;
 
                 for (size_t male_i = 0; male_i < 2*Nmp; ++male_i)
                 {
@@ -361,10 +390,9 @@ void make_juveniles()
 
                 assert(father.phen >-10);
 
-                Individual Kid; 
-
                 is_female = gsl_rng_uniform(r) < 0.5;
 
+                Individual Kid;
                 create_kid(MetaPop[i].localsF[j],father,Kid, is_female);
 
 
@@ -617,7 +645,7 @@ void replace_adults()
 
 void write_data_headers()
 {
-    DataFile << "generation;meanaf;varaf;meanam;varam;nsurvf;nsurvm;" << endl;
+    DataFile << "generation;meanaf;varaf;meanam;varam;nsurvf;nsurvm;ram;" << endl;
 }
 
 void write_data()
@@ -678,6 +706,7 @@ void write_data()
                         << ";" << varam  
                         << ";" << NsurvF
                         << ";" << NsurvM
+                        << ";" << ((double)getValue() * 1e-06)
                         << ";" << endl;
 }
 
