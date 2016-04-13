@@ -329,7 +329,7 @@ void make_juveniles()
 
         for (size_t j = 0; j < Nmp; ++j)
         {
-            cumul_male_effort[j] = sum_male_effort + (1-l) * pow(k * MetaPop[i].localsM[j].phen,3);
+            cumul_male_effort[j] = sum_male_effort + l * pow(k * MetaPop[i].localsM[j].phen,3);
             sum_male_effort = cumul_male_effort[j];
         }
 
@@ -346,7 +346,7 @@ void make_juveniles()
 
             assert(nonlocal_males[j].phen >= -10);
 
-            cumul_male_effort[j + Nmp] = sum_male_effort + l * pow(k * nonlocal_males[j].phen,3);
+            cumul_male_effort[j + Nmp] = sum_male_effort + (1-l) * pow(k * nonlocal_males[j].phen,3);
             sum_male_effort = cumul_male_effort[j + Nmp];
         }
 
