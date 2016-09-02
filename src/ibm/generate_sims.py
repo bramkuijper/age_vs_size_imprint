@@ -15,12 +15,11 @@ diploid = [ 0, 1 ]
 nonlocalmating = [ 0.5 ] 
 
 exe = "./xage_vs_size_imprint"
-#exe = "/home/uccoaku/age_vs_size_imprint/src/ibm/xage_vs_size_imprint"
 
 mu = 0.01
 sdmu = 0.02
 
-reps = 1
+reps = 5
 
 ctr = 0
 

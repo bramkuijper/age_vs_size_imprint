@@ -230,10 +230,10 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
         switch (type)
         {
             case 1: // madumnal allele
-                Kid.phen = mother.af[maternal_allele_f];
+                Kid.phen = Kid.af[0];
                 break;
             case 2: // padumnal allele
-                Kid.phen = father.af[paternal_allele_f];
+                Kid.phen = Kid.af[1];
                 break;
             case 3: // maternal expression
                 Kid.phen = 0.5 * (mother.af[0] + mother.af[1]);
@@ -260,10 +260,10 @@ void create_kid(Individual &mother, Individual &father, Individual &Kid, bool is
         switch(type)
         {
             case 1: // madumnal allele
-                Kid.phen = mother.am[maternal_allele_m];
+                Kid.phen = Kid.am[maternal_allele_m];
                 break;
             case 2: // padumnal allele
-                Kid.phen = diploid ? father.am[paternal_allele_m] : Kid.am[0];
+                Kid.phen = diploid ? Kid.am[paternal_allele_m] : Kid.am[0];
                 break;
             case 3: // maternal expression
                 Kid.phen = 0.5 * (mother.am[0] + mother.am[1]);
