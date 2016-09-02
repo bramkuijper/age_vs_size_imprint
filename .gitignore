@@ -4,6 +4,7 @@
 *.svg
 *.swp
 *.png
+*.pdf
 iter_*
 sim_*
 graph_sim_*
