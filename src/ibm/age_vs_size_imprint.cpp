@@ -31,6 +31,7 @@ const size_t Nfp = 5; // females per patch
 const size_t Nmp = 5; // males per patch
 const size_t numgen = 20000;
 const size_t Clutch = 200;
+const int male_sample_size = 5;
 
 // mutation rates
 double mu = 0;
@@ -299,14 +300,17 @@ void make_juveniles()
     bool is_female;
 
     // cumulative distribution of father's effort
-    double cumul_male_effort[2*Nmp];
+    double cumul_male_effort[Nmp + male_sample_size];
 
+    double sum_local_male_effort = 0;
     double sum_male_effort = 0;
+
+    double nonlocal_sample_weight = (double) Nmp / male_sample_size;
 
     double cumul_deviate;
 
     // variables to store the nonlocally mating males
-    Individual nonlocal_males[Nmp];
+    Individual nonlocal_males[male_sample_size];
     size_t nonlocal_patch;
     size_t nonlocal_id;
 
@@ -325,29 +329,12 @@ void make_juveniles()
         MetaPop[i].immigrant_bonusM = 0;
 
         // make cumulative distribution of male efforts
-        sum_male_effort = 0;
+        sum_local_male_effort = 0;
 
         for (size_t j = 0; j < Nmp; ++j)
         {
-            cumul_male_effort[j] = sum_male_effort + l * pow(k * MetaPop[i].localsM[j].phen,3);
-            sum_male_effort = cumul_male_effort[j];
-        }
-
-        for (size_t j = 0; j < Nmp; ++j)
-        {
-            do {
-                 nonlocal_patch = gsl_rng_uniform_int(r, Npatches);
-            }
-            while(nonlocal_patch == i);
-
-            nonlocal_id = gsl_rng_uniform_int(r, Nmp);
-
-            nonlocal_males[j] = MetaPop[nonlocal_patch].localsM[nonlocal_id];
-
-            assert(nonlocal_males[j].phen >= -10);
-
-            cumul_male_effort[j + Nmp] = sum_male_effort + (1-l) * pow(k * nonlocal_males[j].phen,3);
-            sum_male_effort = cumul_male_effort[j + Nmp];
+            cumul_male_effort[j] = sum_local_male_effort + l * pow(k * MetaPop[i].localsM[j].phen,3);
+            sum_local_male_effort = cumul_male_effort[j];
         }
 
         clutch_size = 0;
@@ -366,13 +353,32 @@ void make_juveniles()
             }
 
             Individual father;
+
             // create kids and reduce parental resources
             for (size_t egg_i = 0; egg_i < clutch_size; ++egg_i)
             {
+                sum_male_effort = sum_local_male_effort;
+
+                // sample nonlocal males and make cumul distribution for each egg
+                for (int male_i = 0; male_i < male_sample_size; ++male_i)
+                {
+                    do {
+                         nonlocal_patch = gsl_rng_uniform_int(r, Npatches);
+                    }
+                    while(nonlocal_patch == i);
+
+                    nonlocal_id = gsl_rng_uniform_int(r, Nmp);
+
+                    nonlocal_males[male_i] = MetaPop[nonlocal_patch].localsM[nonlocal_id];
+
+                    cumul_male_effort[Nmp + male_i] = sum_male_effort + nonlocal_sample_weight * (1.0-l) * pow(k * nonlocal_males[male_i].phen,3);
+                    sum_male_effort = cumul_male_effort[Nmp + male_i];
+                }
+
                 // select male based on his reproductive effort
                 cumul_deviate = gsl_rng_uniform(r) * sum_male_effort;
 
-                for (size_t male_i = 0; male_i < 2*Nmp; ++male_i)
+                for (int male_i = 0; male_i < Nmp + male_sample_size; ++male_i)
                 {
                     if (cumul_deviate <= cumul_male_effort[male_i])
                     {
