@@ -31,7 +31,7 @@ const size_t Nfp = 5; // females per patch
 const size_t Nmp = 5; // males per patch
 const size_t numgen = 20000;
 const size_t Clutch = 200;
-const int male_sample_size = 5;
+const int male_sample_size = 20;
 
 // mutation rates
 double mu = 0;
@@ -371,6 +371,7 @@ void make_juveniles()
 
                     nonlocal_males[male_i] = MetaPop[nonlocal_patch].localsM[nonlocal_id];
 
+                    assert(nonlocal_males[male_i].phen >-10);
                     cumul_male_effort[Nmp + male_i] = sum_male_effort + nonlocal_sample_weight * (1.0-l) * pow(k * nonlocal_males[male_i].phen,3);
                     sum_male_effort = cumul_male_effort[Nmp + male_i];
                 }
@@ -763,6 +764,7 @@ int main(int argc, char * argv[])
     init_arguments(argc,argv);
     init_pop();
 
+    write_parameters();
     write_data_headers();
 
 
@@ -779,5 +781,4 @@ int main(int argc, char * argv[])
     }
 
     write_data();
-    write_parameters();
 }

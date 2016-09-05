@@ -21,6 +21,6 @@ do
         else
             g++ -ggdb -Wall -O3 -std=c++0x -o xage_vs_size_imprint_nf"$i"_nm"$j" age_vs_size_imprint_nf"$i"_nm"$j".cpp Individual.cpp -lm -lgsl -lgslcblas
         fi
-#        rm age_vs_size_imprint_nf"$i"_nm"$j".cpp
+        rm age_vs_size_imprint_nf"$i"_nm"$j".cpp
     done
 done
