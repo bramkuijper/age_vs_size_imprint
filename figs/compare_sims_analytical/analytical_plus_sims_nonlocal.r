@@ -44,7 +44,7 @@ sigmaf <- 1.5
 
 source("../effect_phil/mathematica_expressions.txt")
 
-sim.data <- read.table("summary_age_vs_size_nonlocal.csv",sep=";",header=T)
+sim.data <- read.table("summary_rerun_nonlocal.csv",sep=";",header=T)
 
 se.fun <- function(x) { return(sd(x) / length(x)) }
 
