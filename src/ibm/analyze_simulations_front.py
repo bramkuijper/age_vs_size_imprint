@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# to analyze individual-based sims, but then parameters are given upfront
+
 import os, re, sys
 
 first = True
@@ -44,43 +46,34 @@ def analyze_file(filename):
     fl = f.readlines()
     f.close
 
-    flhead = fl[0]
+    endline = 0
 
-    lc = len(fl)
-    parline = -1
-
-    linerange = range(0,lc)
-    linerange.reverse()
-
-    # search the parameter line
-    for lineno in linerange:
-
-        if re.match("^system;",fl[lineno]) != None:
-            parline = lineno
+    # first see until what line the parameters stretch
+    for idx, line_i in enumerate(fl):
+        if re.match("^generation",line_i) != None:
+            endline = idx
             break
 
-    if parline == -1:
+    # something went wrong. Could not find 
+    # the header. return
+    if endline == len(fl):
         return
 
-    parameters = analyze_parameters(fl[parline:])
+    flhead = fl[endline]
+
+    parameters = analyze_parameters(fl[0:endline])
     
-    data = analyze_data(fl[(parline-8):(parline-3)])
-
-#    data = analyze_data(fl[])
-
-    datvals = [ str(i) for i in data ]
-
     if first:
         print ";".join(parameters.keys()) + ";" + flhead.strip() + "file"
         first = False
 
-    print ";".join(parameters.values()) + ";" + ";".join(datvals) + ";" + filename
+    print ";".join(parameters.values()) + ";" + fl[-1].strip() + filename
 
 
 def visit(arg, dirname, names):
     for name in names:
         if re.match("(sim|iter).*",name) != None:
-            print dirname + "/" + name
+    #        print dirname + "/" + name
             data = analyze_file(dirname + "/" + name)
 
 

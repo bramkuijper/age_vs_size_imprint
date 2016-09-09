@@ -3,14 +3,14 @@
 import numpy as np
 import math, sys
 
-#nf_nm = [[2,2],[3,2],[2,3]]
-nf_nm = [[2,2]]
-dm = [ 0.45 ] #list(np.arange(0,1.05,0.05))
+nf_nm = [[2,2],[3,2],[2,3]]
+#nf_nm = [[2,2]]
+dm = list(np.arange(0,1.05,0.05))
 q = 1
 k = 1.0/3
 
-type = [ 1 ] #[ , 1, 2, 3, 4 ]
-diploid = [ 0 ] 
+type = [ 0, 1, 2, 3, 4 ]
+diploid = [ 0, 1 ] 
 
 nonlocalmating = [ 0.5 ] 
 
@@ -19,7 +19,7 @@ exe = "./xage_vs_size_imprint"
 mu = 0.01
 sdmu = 0.02
 
-reps = 20
+reps = 3
 
 ctr = 0
 
