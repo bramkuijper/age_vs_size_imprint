@@ -62,6 +62,11 @@ def analyze_file(filename):
     flhead = fl[endline]
 
     parameters = analyze_parameters(fl[0:endline])
+
+    # check whether simulation actually returned output
+    # otherwise skip it
+    if re.match("^\d.*",fl[-1]) == None:
+        return
     
     if first:
         print ";".join(parameters.keys()) + ";" + flhead.strip() + "file"
