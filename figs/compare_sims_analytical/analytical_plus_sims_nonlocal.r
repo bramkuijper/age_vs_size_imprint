@@ -44,7 +44,11 @@ sigmaf <- 1.5
 
 source("../effect_phil/mathematica_expressions.txt")
 
-sim.data <- read.table("summary_rerun_nonlocal.csv",sep=";",header=T)
+sim.data <- read.table("summary_sample_size_20.csv",sep=";",header=T)
+
+# some runs were stopped prematurely as I accidentally
+# ran all simulations again then cancelled them
+sim.data <- sim.data[sim.data$generation >= 20000,]
 
 se.fun <- function(x) { return(sd(x) / length(x)) }
 
