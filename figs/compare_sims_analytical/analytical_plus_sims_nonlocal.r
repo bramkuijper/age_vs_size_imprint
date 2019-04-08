@@ -45,10 +45,13 @@ sigmaf <- 1.5
 source("../effect_phil/mathematica_expressions.txt")
 
 sim.data <- read.table("summary_sample_size_20.csv",sep=";",header=T)
+sim.data.2 <- read.table("summary_age_vs_size_imprint_further.csv",sep=";",header=T)
+
+sim.data <- rbind(sim.data,sim.data.2)
 
 # some runs were stopped prematurely as I accidentally
 # ran all simulations again then cancelled them
-sim.data <- sim.data[sim.data$generation >= 20000,]
+sim.data <- sim.data[sim.data$generation >= 19000,]
 
 se.fun <- function(x) { return(sd(x) / length(x)) }
 
@@ -267,7 +270,7 @@ block <- function(row, col, xlab="", ylab="",
 }
 
 
-lvals <- c(0.5, 1.0)
+lvals <- sort(unique(sim.data.3$l))
 
 for (l.i in lvals)
 {
