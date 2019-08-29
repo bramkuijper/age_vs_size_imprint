@@ -49,7 +49,7 @@ source("../effect_phil/mathematica_expressions.txt")
 #
 #sim.data <- rbind(sim.data,sim.data.2)
 
-sim.data <- 
+sim.data <- read.table("../../data/summary_age_vs_size.csv",sep=";",header=T)
 
 # some runs were stopped prematurely as I accidentally
 # ran all simulations again then cancelled them
@@ -272,7 +272,7 @@ block <- function(row, col, xlab="", ylab="",
 }
 
 
-lvals <- sort(unique(sim.data.3$l))
+lvals <- sort(unique(sim.data$l))
 
 for (l.i in lvals)
 {
@@ -327,7 +327,10 @@ for (l.i in lvals)
         # use the block function to generate one graph
         block(row=2,col=2,
                 print.xlabels=T,
-                ind.label=expression(paste("A. Diploid, offspring expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("A. Diploid, offspring expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afdip,am=amdip)),
@@ -341,7 +344,10 @@ for (l.i in lvals)
 
         block(row=4,col=2,
                 print.xlabels=T,
-                ind.label=expression(paste("B. Haplodiploid, offspring expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("B. Haplodiploid, offspring expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afhapdip,am=amhapdip)),
@@ -361,7 +367,10 @@ for (l.i in lvals)
                                         sim.data$imprint == "madumnal",]
         block(row=2,col=4,
                 print.xlabels=T,
-                ind.label=expression(paste("C. Diploid, madumnal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("C. Diploid, madumnal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afdipMI,am=amdipMI)),
@@ -382,7 +391,10 @@ for (l.i in lvals)
         
         block(row=4,col=4,
                 print.xlabels=T,
-                ind.label=expression(paste("D. Haplodiploid, madumnal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("D. Haplodiploid, madumnal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afhapdipMI,am=amhapdipMI)),
@@ -402,7 +414,10 @@ for (l.i in lvals)
                                         sim.data$imprint == "padumnal",]
         block(row=2,col=6,
                 print.xlabels=T,
-                ind.label=expression(paste("E. Diploid, padumnal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("E. Diploid, padumnal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afdipPI,am=amdipPI)),
@@ -423,7 +438,10 @@ for (l.i in lvals)
         
         block(row=4,col=6,
                 print.xlabels=T,
-                ind.label=expression(paste("F. Haplodiploid, padumnal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("F. Haplodiploid, padumnal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afhapdipPI,am=amhapdipPI)),
@@ -443,7 +461,10 @@ for (l.i in lvals)
                                         sim.data$imprint == "maternal",]
         block(row=2,col=8,
                 print.xlabels=T,
-                ind.label=expression(paste("G. Diploid, maternal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("G. Diploid, maternal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afdipM,am=amdipM)),
@@ -464,7 +485,10 @@ for (l.i in lvals)
         
         block(row=4,col=8,
                 print.xlabels=T,
-                ind.label=expression(paste("H. Haplodiploid, maternal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("H. Haplodiploid, maternal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afhapdipM,am=amhapdipM)),
@@ -485,7 +509,10 @@ for (l.i in lvals)
                                         sim.data$imprint == "paternal",]
         block(row=2,col=10,
                 print.xlabels=T,
-                ind.label=expression(paste("I. Diploid, paternal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("I. Diploid, paternal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afdipP,am=amdipP)),
@@ -506,7 +533,10 @@ for (l.i in lvals)
         
         block(row=4,col=10,
                 print.xlabels=T,
-                ind.label=expression(paste("J. Haplodiploid, paternal expression, ",italic(ℓ),"=0.5")),
+                ind.label=eval(substitute(
+                                expression(
+                                        paste("J. Haplodiploid, paternal expression, ",
+                                                italic(ℓ),"=",lval)),list(lval=l.i))),
                 ylim=c(-0.1,6),        
                 params=list(l=l.i, nf=nfp.i, nm=nmp.i, μ=1.0, k=1.0/3),
                 gradient_expressions=list(list(af=afhapdipP,am=amhapdipP)),

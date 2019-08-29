@@ -6,8 +6,12 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage{apjfonts}
-
+%\usepackage{apjfonts}
+%\usepackage{newtxmath}
+%\usepackage{pxfonts}
+%\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+%\usepackage{newpxtext,newpxmath}
 \definecolor{slateblue}{RGB}{17, 83,128}
 \usepackage{doi}
 \allowdisplaybreaks
@@ -812,13 +816,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename figs/effect_phil/philopatrydip.pdf
-	scale 40
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1033,6 +1030,10 @@ LARGE{When should genomic imprinting affect age at first reproduction?}
 \backslash
 Large{
 \backslash
+
+\backslash
+
+\backslash
 emph{Online Supplement}}
 \end_layout
 
@@ -1049,11 +1050,7 @@ end{center}
 \end_layout
 
 \begin_layout Section
-Fitness expressions
-\end_layout
-
-\begin_layout Subsection
-Fitness expressions female age at maturity
+Fitness when age at maturity is a shared trait
 \end_layout
 
 \begin_layout Standard
@@ -1070,32 +1067,59 @@ We track the expected number
 \end_inset
 
  that bears the mutant 
-\begin_inset Formula $a_{\mathrm{f}}$
+\begin_inset Formula $a$
 \end_inset
 
 -allele:
 \begin_inset Formula 
 \begin{align}
-w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
-w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
-w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\right.\nonumber \\
- & \left.+\left(1-\ell\right)\frac{s\left(a_{\mathrm{f}}^{\mathrm{j}i,\text{nonloc}}\right)}{s\left(a_{\mathrm{f}}\right)}\right\} \label{eq:af:wfm}\\
-w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]+\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\right\} .\label{eq:af:wmm}
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a^{\mathrm{focf,f}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a^{\mathrm{jfocf,f}}\right)}{f\left(a^{\mathrm{alocf,f}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a^{\mathrm{jlocf,f}}\right)+d_{\mathrm{f}}f\left(a\right)s\left(a\right)}+\frac{d_{\mathrm{f}}s\left(a^{\mathrm{jfocf,f}}\right)}{f\left(a\right)s\left(a\right)}\right]\label{eq:a:wff}\\
+w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a^{\mathrm{focf,f}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jfocm,f}}\right)}{n_{\mathrm{f}}\left[f\left(a^{\mathrm{alocf,f}}\right)\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jlocm,f}}\right)+d_{\mathrm{m}}f\left(a\right)s\left(a\right)\right]}\right.\nonumber \\
+ & \left.+\frac{n_{\mathrm{m}}d_{\mathrm{m}}s\left(a^{\mathrm{jfocm,f}}\right)}{n_{\mathrm{f}}f\left(a\right)s\left(a\right)}\right]\label{eq:a:wmf}\\
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell\frac{g\left(a^{\mathrm{focm,m}}\right)}{\ell g\left(a^{\mathrm{alocm,m}}\right)+\left(1-\ell\right)g\left(a\right)}f\left(a^{\mathrm{alocf,m}}\right)\right.\nonumber \\
+ & \times\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a^{\mathrm{jfocf,m}}\right)}{f\left(a^{\mathrm{alocf,m}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a^{\mathrm{jlocf,m}}\right)+d_{\mathrm{f}}f\left(a\right)s\left(a\right)}+\frac{d_{\mathrm{f}}s\left(a^{\mathrm{jfocf,m}}\right)}{f\left(a\right)s\left(a\right)}\right]\nonumber \\
+ & +\left.\left(1-\ell\right)\frac{g\left(a^{\mathrm{focm,m}}\right)}{g\left(a\right)}\frac{s\left(a^{\mathrm{jfoc,nonlocf,m}}\right)}{s\left(a\right)}\right\} \label{eq:a:wfm}\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell\frac{g\left(a^{\mathrm{focm,m}}\right)}{\ell g\left(a^{\mathrm{alocm,m}}\right)+\left(1-\ell\right)g\left(a\right)}f\left(a^{\mathrm{alocf,m}}\right)\right.\nonumber \\
+ & \times\left[\frac{\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jfocm,m}}\right)}{f\left(a^{\mathrm{alocf,m}}\right)\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jlocm,m}}\right)+d_{\mathrm{m}}f\left(a\right)s\left(a\right)}+\frac{d_{\mathrm{m}}s\left(a^{\mathrm{jfoc,mm}}\right)}{f\left(a\right)s\left(a\right)}\right]\nonumber \\
+ & +\left.\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\frac{g\left(a^{\mathrm{focm,m}}\right)}{g\left(a\right)}\frac{s\left(a^{\mathrm{jfoc,nonlocm,m}}\right)}{s\left(a\right)}\right\} \label{eq:a:wmm}
 \end{align}
 
 \end_inset
 
-Regarding the first line, an adult female bearing the focal allele has fecundity
- 
-\begin_inset Formula $f(a_{\mathrm{f}}^{i})$
+Regarding the first line, an adult female bearing the focal 
+\begin_inset Formula $a$
 \end_inset
 
-, 
+ allele has fecundity 
+\begin_inset Formula $f(a^{\mathrm{focf,f}})$
+\end_inset
+
+.
+ Here, the superscript 
+\begin_inset Formula $^{\mathrm{focf,f}}$
+\end_inset
+
+ of the 
+\begin_inset Formula $a$
+\end_inset
+
+ allele denotes who expresses the phenotype (focal female, here denoted
+ as 
+\begin_inset Formula $^{\mathrm{focf}}$
+\end_inset
+
+) while the second part of the superscript denotes the sex of the focal
+ adult breeder who bears the mutant allele (the focal female, hence 
+\begin_inset Formula $\mathrm{f}$
+\end_inset
+
+).
+ Next, the coefficient 
 \begin_inset Formula $1/2$
 \end_inset
 
- of which are daughters.
- The transmission coefficient 
+ reflects the proportion of offspring who are daughters and the transmission
+ coefficient 
 \begin_inset Formula $t_{ij}$
 \end_inset
 
@@ -1208,6 +1232,46 @@ Regarding the first line, an adult female bearing the focal allele has fecundity
  elsewhere.
 \end_layout
 
+\begin_layout Section
+Fitness when age at maturity is a sex-specific trait
+\end_layout
+
+\begin_layout Subsection
+Fitness expressions female age at maturity
+\end_layout
+
+\begin_layout Standard
+We track the expected number 
+\begin_inset Formula $w_{ij}$
+\end_inset
+
+ of successfully established offspring of sex 
+\begin_inset Formula $i$
+\end_inset
+
+ that are born from a parent of sex 
+\begin_inset Formula $j$
+\end_inset
+
+ that bears the mutant 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+-allele:
+\begin_inset Formula 
+\begin{align}
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
+w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\right.\nonumber \\
+ & \left.+\left(1-\ell\right)\frac{s\left(a_{\mathrm{f}}^{\mathrm{j}i,\text{nonloc}}\right)}{s\left(a_{\mathrm{f}}\right)}\right\} \label{eq:af:wfm}\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]+\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\right\} .\label{eq:af:wmm}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Fitness expressions male age at maturity
 \end_layout
@@ -1225,7 +1289,42 @@ w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}
 
 \end_inset
 
+Regarding the first line, 
+\begin_inset Formula $1/2$
+\end_inset
 
+ again reflects the proportion of daughters born from the focal mother and
+ 
+\begin_inset Formula $t_{ij}$
+\end_inset
+
+ reflects the transmission probabilities of a focal 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ allele as in eqns.
+ (XX-YY) above.
+ An adult female bearing a mutant 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ allele will not express it and neither will her daughters.
+ Hence the focal female has fecundity 
+\begin_inset Formula $f(a_{\mathrm{f}})$
+\end_inset
+
+ as any other female in her local patch.
+ Similarly, her daughters will have survival 
+\begin_inset Formula $s(a_{\mathrm{f}})$
+\end_inset
+
+ as all other newborn daughters.
+ Consequently, terms in numerator and denominator cancel out, so that the
+ expected number of successfully established daughters is equal to 
+\begin_inset Formula $1$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1242,6 +1341,86 @@ w_{\mathrm{m}} & =\frac{v_{\mathrm{f}}}{v_{\mathrm{m}}}w_{\mathrm{fm}}+w_{\mathr
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsection
+Selection gradient for shared traits
+\end_layout
+
+\begin_layout Standard
+We derive a selection gradient 
+\begin_inset Formula $\mathrm{d}w/\mathrm{d}a$
+\end_inset
+
+ that determines the rate of evolutionary change in 
+\begin_inset Formula $a$
+\end_inset
+
+ by using a direct fitness approach (also called neighbour-modulated fitness)
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hamilton1964a,Taylor1996,Rousset2004,Taylor2007"
+literal "true"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\frac{\mathrm{d}w}{\mathrm{d}a} & =\left.c_{\mathrm{f}}\left(\frac{\partial w_{\mathrm{f}}}{\partial a^{i}}r_{\mathrm{m}i}+\frac{\partial w_{\mathrm{f}}}{\partial a^{\mathrm{j}i}}r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{f}}}{\partial a^{\mathrm{ff}}}r_{\mathrm{f\rightarrow f}}+\frac{\partial w_{\mathrm{f}}}{\partial a^{\mathrm{jff}}}r_{\mathrm{f}\rightarrow\mathrm{fjuv}}\right)\right|_{a^{x}=a}\nonumber \\
+ & +c_{\mathrm{m}}\left(\frac{\partial w_{\mathrm{m}}}{\partial a^{\mathrm{j}i}}r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a^{\mathrm{j}i,\text{nonloc}}}r_{\mathrm{m}\rightarrow\text{own nonloc juv},\mathrm{f}}+\frac{\partial w_{\mathrm{m}}}{\partial a^{\mathrm{fm}}}r_{\mathrm{m\rightarrow f}}\right.\nonumber \\
+ & +\left.\left.\frac{\partial w_{\mathrm{m}}}{\partial a^{\mathrm{jfm}}}r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\right|_{a^{x}=a},\label{eq:selgrad:a}
+\end{align}
+
+\end_inset
+
+where 
+\begin_inset Formula $r_{\mathrm{f}i}$
+\end_inset
+
+ indicates relatedness between the adult bearer of the focal allele and
+ itself, 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}$
+\end_inset
+
+ reflects relatedness between an adult female and one of her daughters,
+ 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{f}}$
+\end_inset
+
+ reflects relatedness between two adult females sampled randomly with replacemen
+t from the same patch, 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\mathrm{fjuv}}$
+\end_inset
+
+ the relatedness between an adult female and a locally born juvenile female
+ and 
+\begin_inset Formula $r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}$
+\end_inset
+
+ reflects relatedness between an adult male and one of his daughters.
+ All partial derivatives of the variables 
+\begin_inset Formula $a_{\mathrm{f}}^{x}=[a_{\mathrm{f}}^{i},a_{\mathrm{f}}^{\mathrm{j}i},\ldots,a_{\mathrm{f}}^{\mathrm{jfm}}]$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}^{x}=[a_{\mathrm{m}}^{\mathrm{j}i},a_{\mathrm{m}}^{\mathrm{jmf}}\ldots,a_{\mathrm{m}}^{\mathrm{jmm}}]$
+\end_inset
+
+ are evaluated at the resident trait values 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ respectively.
+\end_layout
+
+\begin_layout Standard
 We then derive selection gradients that determine the rate of evolutionary
  change in 
 \begin_inset Formula $a_{\mathrm{f}}$
@@ -1320,22 +1499,64 @@ t from the same patch,
 Evolutionarily singular strategies
 \end_layout
 
+\begin_layout Subsubsection
+Age at maturity as a shared trait
+\end_layout
+
 \begin_layout Standard
 To fix ideas, we first assess a `baseline' scenario in which populations
  are well mixed (full female and male dispersal: 
 \begin_inset Formula $h_{\mathrm{f}}=0,\ h_{\mathrm{m}}=0$
 \end_inset
 
+, males always mate in remote patches, 
+\begin_inset Formula $\ell=0$
+\end_inset
+
 ).
- We then recover the classical result 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Roff2002"
-literal "true"
+ For an autosomal genetic trait expressed by juveniles, we obtain the result
+ 
+\begin_inset Formula 
+\begin{align}
+-\frac{s^{\prime}\left(a^{\star}\right)}{s\left(a^{\star}\right)} & =\frac{1}{2}\left(\frac{f^{\prime}\left(a^{\star}\right)}{f\left(a^{\star}\right)}+\frac{g^{\prime}\left(a^{\star}\right)}{g\left(a^{\star}\right)}\right),\label{eq:well_mixed:a:ESS}
+\end{align}
 
 \end_inset
 
-: 
+implying that the marginal decrease in juvenile survival 
+\begin_inset Formula $s$
+\end_inset
+
+ (caused by a slightly higher age at maturity) must precisely balance the
+ proportional increase in female fecundity 
+\begin_inset Formula $f(\cdot)$
+\end_inset
+
+ and male virility 
+\begin_inset Formula $g(\cdot)$
+\end_inset
+
+.
+ Note that even in haplodiploid systems, proportional increases in female
+ fecundity and male virility are weighted equally (hence the scalar of 
+\begin_inset Formula $1/2$
+\end_inset
+
+ on the right hand side).
+ This is because 
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $1/2$
+\end_inset
+
+ on the rhs reflects the notion that, at equilibrium,
+\end_layout
+
+\begin_layout Standard
+, while the right-hand size reflects the marginal gains of additional investment
+ in 
 \begin_inset Formula 
 \begin{align}
 -\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:well_mixed:af:ES}\\
@@ -1798,7 +2019,7 @@ reference "eq:am:wmm"
  We have
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =\hat{Q}_{\mathrm{f}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:rownjuvF}\\
+r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}} & =\frac{1}{2}+\frac{1}{2}\ell\hat{Q}_{\mathrm{fm}}=\hat{Q}_{\mathrm{f}},\ r_{\mathrm{f}\rightarrow\text{own\ juv},\mathrm{m}}=\hat{Q}_{\mathrm{m}}\label{eq:relatedness:diploid:rownjuvF}\\
 r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}} & =\frac{1}{2}+\frac{1}{2}\hat{Q}_{\mathrm{fm}},\ r_{\mathrm{m}\rightarrow\text{own\ juv},\mathrm{m}}=\frac{1}{2}+\frac{1}{2}\hat{Q}_{\mathrm{fm}}.\label{eq:relatedness:diploid:rownjuvM}
 \end{align}
 
@@ -1813,9 +2034,9 @@ These focal sons and daughters bear at least one mutant allele (with phenotype
 \begin_inset Formula $\frac{1}{2}\cdot1$
 \end_inset
 
-.
- In addition, the other allele is also a mutant when both parents share
- identical alleles, with probability 
+ due to additivity.
+ In addition, the other allele is also a mutant allele when both parents
+ share identical alleles, with probability 
 \begin_inset Formula $\hat{Q}_{\mathrm{fm}}$
 \end_inset
 
