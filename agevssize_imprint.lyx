@@ -420,10 +420,6 @@ literal "true"
  sex differences in dispersal and/or mating skew.
 \end_layout
 
-\begin_layout Standard
-- To discuss: sex-limited versus not sex-limited
-\end_layout
-
 \begin_layout Section
 The model
 \end_layout
@@ -635,58 +631,98 @@ Result 1: age at maturity increases with philopatry
 \end_layout
 
 \begin_layout Standard
-To fix ideas, we first consider a scenario in which individuals express
- their own phenotype, in the absence of imprinting or parental effects.
- Figure 
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:ES_nf2_nm2"
+reference "fig:vary_sexbias_dispersal_diploid"
 
 \end_inset
 
- then shows how sex-biased dispersal influences optimal age at maturity
- in females (panels A, C) and males (panels B, D) for different probabilities
+ shows how sex-biased dispersal influences optimal age at maturity in females
  
-\begin_inset Formula $\ell$
+\begin_inset Formula $a_{\mathrm{f}}$
 \end_inset
 
- with which males exlusively mate within their their local group.
+ (panels A, C) and males 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ (panels B, D) when expression of 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{\mathrm{m}}$
+\end_inset
+
+ is controlled by different genetic elements expressed by mothers or parents.
  Importantly, when males mate only locally 
 \begin_inset Formula $(\ell=1)$
 \end_inset
 
 , we find that sex-differences in dispersal only affects age at maturity
- in females but not males: specifically, female age at maturity increases
- with rising levels of female philopatry (Figure 
+ in females but not males.
+ We find that female age at maturity first increases and then decreases
+ with increasing female dispersal and decreasing male dispersal (Figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:ES_nf2_nm2"
+reference "fig:vary_sexbias_dispersal_diploid"
 
 \end_inset
 
 A), whereas male age at maturity is unaffected by dispersal (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:ES_nf2_nm2"
+reference "fig:vary_sexbias_dispersal_diploid"
 
 \end_inset
 
 B).
- By contrast, when males mate nonlocally, we find a qualitatively similar
- pattern in both sexes: age at maturity increases with the probability of
- philopatry of that sex.
+ In case females mate with nonlocal males from randomly chosen, remote patches
+ (
+\begin_inset Formula $\ell<1$
+\end_inset
+
+), male age at maturity increases with rising male philopatry.
 \end_layout
 
 \begin_layout Standard
-Why do we find these patterns? Regarding female age maturity, consider a
- case where females are more philopatric than males.
- In this case, any increase in female fecundity 
+Why do we find these patterns? Regarding female age at maturity, note that
+ when dispersal is limited for either daughters or sons, any increase in
+ 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ would increase fecundity 
 \begin_inset Formula $f(a_{\mathrm{f}})$
 \end_inset
 
- (through a delayed female age at maturity) will increase the number of
- philopatric daughters competing in the local patch.
- At the same time however, increased 
+ and hence local competition among offspring, particularly in the sex in
+ which dispersal is the most limited.
+ Hence, whenever either sons or daughters experience limited dispersal,
+ lower values of 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ are selectively favored, explaining the hump-shaped function of female
+ age at maturity (either end of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+A).
+ Note that the reduction in 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ is smaller when female 
+\end_layout
+
+\begin_layout Standard
+At the same time however, increased 
 \begin_inset Formula $f(a_{\mathrm{f}})$
 \end_inset
 
@@ -806,6 +842,18 @@ literal "true"
 \end_layout
 
 \begin_layout Section
+Figure captions
+\end_layout
+
+\begin_layout Paragraph
+Figure 1
+\end_layout
+
+\begin_layout Standard
+The effect of sex-biased dispersal on female and male age at maturity when
+\end_layout
+
+\begin_layout Section
 Figures
 \end_layout
 
@@ -816,12 +864,23 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/effect_phil/effect_philopatry_and_l_dip.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:ES_nf2_nm2"
+name "fig:vary_sexbias_dispersal_diploid"
 
 \end_inset
 
@@ -1332,12 +1391,21 @@ Selection gradients
 \end_layout
 
 \begin_layout Standard
-Expressions for female and male fitnesses are then given by
+Following eq.
+ (27) in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Taylor1996"
+literal "false"
+
+\end_inset
+
+, female and male fitnesses are then given by
 \begin_inset Formula 
-\begin{align*}
-w_{\mathrm{f}} & =\frac{v_{\mathrm{m}}}{v_{\mathrm{f}}}w_{\mathrm{mf}}+w_{\mathrm{ff}}\\
-w_{\mathrm{m}} & =\frac{v_{\mathrm{f}}}{v_{\mathrm{m}}}w_{\mathrm{fm}}+w_{\mathrm{mm}}.
-\end{align*}
+\begin{align}
+w_{\mathrm{f}} & =\frac{v_{\mathrm{m}}}{v_{\mathrm{f}}}w_{\mathrm{mf}}+w_{\mathrm{ff}}\label{eq:female_fitness}\\
+w_{\mathrm{m}} & =\frac{v_{\mathrm{f}}}{v_{\mathrm{m}}}w_{\mathrm{fm}}+w_{\mathrm{mm}}.\label{eq:male_fitness}
+\end{align}
 
 \end_inset
 
@@ -1543,7 +1611,7 @@ implying that the marginal decrease in juvenile survival
 \end_inset
 
  on the right hand side).
- This is because 
+ This is because
 \end_layout
 
 \begin_layout Standard
