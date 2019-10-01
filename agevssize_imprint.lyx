@@ -236,6 +236,24 @@ clearpage
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Plain Layout
+- 'offspring expression': difficult term as gene locus is expressed in parents
+ and offspring dependent on life cycle stage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout
@@ -627,7 +645,126 @@ Results
 \end_layout
 
 \begin_layout Subsection
-Result 1: age at maturity increases with philopatry
+The evolution of female age and size at maturity: trade-offs in viscous
+ populations
+\end_layout
+
+\begin_layout Standard
+To fix ideas about the evolution of 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+, eqns.
+ [XX,YY] of the online supplement (see also 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Johnstone2014"
+literal "false"
+
+\end_inset
+
+ for a population without sex-differences in dispersal and no mating skow)
+ show that the stable female age at maturity 
+\begin_inset Formula $a_{\mathrm{f}}^{\star}$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{align}
+-\frac{1}{2}\left(r_{\text{\mathrm{f}\rightarrow self,juv f}}-r_{\mathrm{f}\rightarrow\text{competing juv f}}\right)\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\left(r_{\mathrm{f}\rightarrow\text{own young}}-r_{\mathrm{f}\rightarrow\text{competing young}}\right)\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}.\label{eq:viscous:af:equilibrium_main_text}
+\end{align}
+
+\end_inset
+
+Regarding the terms on the left-hand side, 
+\begin_inset Formula $r_{\text{\mathrm{f}\rightarrow self,juv}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing juv f}}$
+\end_inset
+
+ reflect relatedness of the focal allele present in a female juvenile to
+ itself and to any competing female juveniles (including herself).
+ In the Online Supplement, we derive these relatedness coefficients in terms
+ of the demographical parameters 
+\begin_inset Formula $d_{\mathrm{f}}$
+\end_inset
+
+, 
+\begin_inset Formula $d_{\mathrm{m}}$
+\end_inset
+
+, 
+\begin_inset Formula $n_{\mathrm{m}}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{\mathrm{f}}$
+\end_inset
+
+.
+ Next, 
+\begin_inset Formula $-s^{\prime}(a_{\mathrm{f}}^{\star})/s(a_{\mathrm{f}}^{\star})$
+\end_inset
+
+ reflects the relative decrease in survival due to a slight increase in
+ female age at maturity.
+ Note that the term 
+\begin_inset Formula $1/2$
+\end_inset
+
+ reflects that 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+ is only expressed in female juveniles.
+ Regarding the terms on the right hand-side, 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ reflect relatedness of an adult female to her own young and to any competing
+ young respectively, while 
+\begin_inset Formula $f^{\prime}(a_{\mathrm{f}}^{\star})/f(a_{\mathrm{f}}^{\star})$
+\end_inset
+
+ reflects the increase in fecundity due to a slight increase in female age
+ at maturity.
+\end_layout
+
+\begin_layout Standard
+Overall, eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:viscous:af:equilibrium_main_text"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) shows that the marginal survival cost due to an increased age at maturity
+ 
+\begin_inset Formula $-s^{\prime}(a_{\mathrm{f}}^{\star})/s(a_{\mathrm{f}}^{\star})$
+\end_inset
+
+ is offset by the fact that in dying, a focal adult female clears the way
+ for a competing female juvenile to claim a breeding spot.
+ Similarly, the marginal survival benefit of an increased fecundity 
+\begin_inset Formula $f^{\prime}(a_{\mathrm{f}}^{\star})/f(a_{\mathrm{f}}^{\star})$
+\end_inset
+
+ is offset by the fact that in producing offspring, competing young are
+ displaced from a breeding spot.
+\end_layout
+
+\begin_layout Subsection
+Intragenomic conflict over female age and size at maturity
 \end_layout
 
 \begin_layout Standard
@@ -655,7 +792,8 @@ reference "fig:vary_sexbias_dispersal_diploid"
 \begin_inset Formula $a_{\mathrm{m}}$
 \end_inset
 
- is controlled by different genetic elements expressed by mothers or parents.
+ is controlled by offspring, mothers, fathers or imprinted alleles expressed
+ in offspring (compare different lines).
  Importantly, when males mate only locally 
 \begin_inset Formula $(\ell=1)$
 \end_inset
@@ -688,41 +826,306 @@ B).
 \end_layout
 
 \begin_layout Standard
-Why do we find these patterns? Regarding female age at maturity, note that
- when dispersal is limited for either daughters or sons, any increase in
- 
-\begin_inset Formula $a_{\mathrm{f}}$
-\end_inset
-
- would increase fecundity 
-\begin_inset Formula $f(a_{\mathrm{f}})$
-\end_inset
-
- and hence local competition among offspring, particularly in the sex in
- which dispersal is the most limited.
- Hence, whenever either sons or daughters experience limited dispersal,
- lower values of 
-\begin_inset Formula $a_{\mathrm{f}}$
-\end_inset
-
- are selectively favored, explaining the hump-shaped function of female
- age at maturity (either end of Figure 
+Focusing first on female age at maturity expressed in offspring (solid black
+ line in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:vary_sexbias_dispersal_diploid"
 
 \end_inset
 
-A).
- Note that the reduction in 
+A), why does 
 \begin_inset Formula $a_{\mathrm{f}}$
 \end_inset
 
- is smaller when female 
+ first increase and then decrease when sex-biased dispersal is varied from
+ female philopatry (left-hand side of each panel in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+) to male philopatry (right-hand side of each panel in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+)? Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:relatedness"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+A shows that 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ is largest when one sex always disperses as a juvenile while the other
+ sex always remains at the local patch (i.e., 
+\begin_inset Formula $d_{\mathrm{m}}=1,\ d_{\mathrm{f}}=0$
+\end_inset
+
+ or 
+\begin_inset Formula $d_{\mathrm{m}}=0,\ d_{\mathrm{f}}=1$
+\end_inset
+
+).
+ This makes sense, as limited dispersal 
 \end_layout
 
 \begin_layout Standard
-At the same time however, increased 
+while 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}-r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ is largest when both sexes disperse at intermediate levels (towards the
+ middle of each panel in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:relatedness"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ This makes sense, as high dispersal by one sex reduces the probability
+ that matings will take place among relatives.
+\end_layout
+
+\begin_layout Standard
+To understand this pattern, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:relatedness"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+A depicts how relatedness coefficients change when varying the degree of
+ sex-biased dispersal.
+ Regarding the effective relatedness coefficients 
+\begin_inset Formula $\frac{1}{2}r_{\mathrm{f}\rightarrow\text{self,juv f}}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}$
+\end_inset
+
+, we can show that 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}\geq\frac{1}{2}r_{\mathrm{f}\rightarrow\text{self,juv f}}$
+\end_inset
+
+ as 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}=\frac{1}{2}r_{\mathrm{f}\rightarrow\text{self,juv f}}+\ell\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+ (by substituting eqns.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:ri"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relatedness:diploid:rownjuvM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) in eqns.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:supplement:ES:rfselfjuv"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:supplement:ES:rfownoffspring"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), where 
+\begin_inset Formula $=\hat{Q}_{\mathrm{fm}}$
+\end_inset
+
+ is the equilibrium coefficient of consanguinity between an adult male and
+ an adult female.
+ When one sex always disperses as a juvenile while the other sex always
+ remains at the local patch (i.e., 
+\begin_inset Formula $d_{\mathrm{m}}=1,\ d_{\mathrm{f}}=0$
+\end_inset
+
+ or 
+\begin_inset Formula $d_{\mathrm{m}}=0,\ d_{\mathrm{f}}=1$
+\end_inset
+
+), we find that 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}=\frac{1}{2}r_{\mathrm{f}\rightarrow\text{self,juv f}}$
+\end_inset
+
+ as adult matings are then exclusively among nonrelatives (hence 
+\begin_inset Formula $\hat{Q}_{\mathrm{fm}}=0$
+\end_inset
+
+).
+ When both sexes disperse at intermediate levels, however, (i.e., towards
+ the point 
+\begin_inset Formula $d_{\mathrm{f}}=d_{\mathrm{m}}=0.5$
+\end_inset
+
+ in the middle of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:relatedness"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+A) some matings occur between relatives so that 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{own young}}>\frac{1}{2}r_{\mathrm{f}\rightarrow\text{self,juv f}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we find that 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing juv f}}$
+\end_inset
+
+ is smaller than 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+, because
+\end_layout
+
+\begin_layout Standard
+so that the marginal fecundity benefit (right-hand side in eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:viscous:af:equilibrium_main_text"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) is more strongly reduced by locally competing offspring than the marginal
+ survival cost is reduced by relatedness among locally competing female
+ juveniles.
+\end_layout
+
+\begin_layout Standard
+.
+ Consequently, the relative survival cost of delayed maturation on the left-hand
+ side in eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:viscous:af:equilibrium_main_text"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) increases with 
+\begin_inset Formula $d_{\mathrm{f}}$
+\end_inset
+
+, as mortality implies that a female's prospective breeding position will
+ be occupied by a nonrelative.
+\end_layout
+
+\begin_layout Standard
+The overall level of dispersal is highest towards the middle of each panel
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+, where 
+\begin_inset Formula $d_{\mathrm{f}}=d_{\mathrm{m}}=0.5$
+\end_inset
+
+.
+ Hence, unsurprisingly, relatedness among competing young 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ is lowest where 
+\begin_inset Formula $d_{\mathrm{f}}=d_{\mathrm{m}}=0.5$
+\end_inset
+
+ and is highest at either end of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ increase.
+ However, 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing juv f}}$
+\end_inset
+
+ increases at a slower fashion than 
+\begin_inset Formula $r_{\mathrm{f}\rightarrow\text{competing young}}$
+\end_inset
+
+ as due to 
+\end_layout
+
+\begin_layout Standard
+A t the same time however, increased 
 \begin_inset Formula $f(a_{\mathrm{f}})$
 \end_inset
 
@@ -850,7 +1253,17 @@ Figure 1
 \end_layout
 
 \begin_layout Standard
-The effect of sex-biased dispersal on female and male age at maturity when
+The effect of sex-biased dispersal on female and male age at maturity in
+ diplodiploids.
+\end_layout
+
+\begin_layout Paragraph
+Figure 2
+\end_layout
+
+\begin_layout Standard
+The effect of sex-biased dispersal on female and male age at maturity in
+ haplodiploids.
 \end_layout
 
 \begin_layout Section
@@ -861,7 +1274,7 @@ Figures
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -881,6 +1294,62 @@ status open
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:vary_sexbias_dispersal_diploid"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/effect_phil/effect_philopatry_and_l_hapdip.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vary_sexbias_dispersal_haplodiploid"
 
 \end_inset
 
@@ -1108,11 +1577,15 @@ end{center}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Section
 Fitness when age at maturity is a shared trait
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 We track the expected number 
 \begin_inset Formula $w_{ij}$
 \end_inset
@@ -1141,6 +1614,135 @@ w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}
 w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell\frac{g\left(a^{\mathrm{focm,m}}\right)}{\ell g\left(a^{\mathrm{alocm,m}}\right)+\left(1-\ell\right)g\left(a\right)}f\left(a^{\mathrm{alocf,m}}\right)\right.\nonumber \\
  & \times\left[\frac{\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jfocm,m}}\right)}{f\left(a^{\mathrm{alocf,m}}\right)\left(1-d_{\mathrm{m}}\right)s\left(a^{\mathrm{jlocm,m}}\right)+d_{\mathrm{m}}f\left(a\right)s\left(a\right)}+\frac{d_{\mathrm{m}}s\left(a^{\mathrm{jfoc,mm}}\right)}{f\left(a\right)s\left(a\right)}\right]\nonumber \\
  & +\left.\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\frac{g\left(a^{\mathrm{focm,m}}\right)}{g\left(a\right)}\frac{s\left(a^{\mathrm{jfoc,nonlocm,m}}\right)}{s\left(a\right)}\right\} \label{eq:a:wmm}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Supplementary Figures
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figs/effect_phil/relatedness_with_annotations.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:relatedness"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Figure S1:
+\end_layout
+
+\begin_layout Standard
+The relatedness coefficients in eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:viscous:af:equilibrium_main_text"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) for varying levels of sex-biased dispersal (
+\begin_inset Formula $x$
+\end_inset
+
+-axis), for different genetic systems (diplodiploidy: panels A, C, E, G,
+ I; haplodiploidy: panels B, D, F, H, J) and for different levels of expression.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Fitness
+\end_layout
+
+\begin_layout Subsection
+Fitness expressions female age at maturity
+\end_layout
+
+\begin_layout Standard
+We track the expected number 
+\begin_inset Formula $w_{ij}$
+\end_inset
+
+ of successfully established offspring of sex 
+\begin_inset Formula $i$
+\end_inset
+
+ that are born from a parent of sex 
+\begin_inset Formula $j$
+\end_inset
+
+ that bears the mutant 
+\begin_inset Formula $a_{\mathrm{f}}$
+\end_inset
+
+-allele:
+\begin_inset Formula 
+\begin{align}
+w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
+w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
+w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\right.\nonumber \\
+ & \left.+\left(1-\ell\right)\frac{s\left(a_{\mathrm{f}}^{\mathrm{j}i,\text{nonloc}}\right)}{s\left(a_{\mathrm{f}}\right)}\right\} \label{eq:af:wfm}\\
+w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]+\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\right\} .\label{eq:af:wmm}
 \end{align}
 
 \end_inset
@@ -1289,46 +1891,6 @@ Regarding the first line, an adult female bearing the focal
 \end_inset
 
  elsewhere.
-\end_layout
-
-\begin_layout Section
-Fitness when age at maturity is a sex-specific trait
-\end_layout
-
-\begin_layout Subsection
-Fitness expressions female age at maturity
-\end_layout
-
-\begin_layout Standard
-We track the expected number 
-\begin_inset Formula $w_{ij}$
-\end_inset
-
- of successfully established offspring of sex 
-\begin_inset Formula $i$
-\end_inset
-
- that are born from a parent of sex 
-\begin_inset Formula $j$
-\end_inset
-
- that bears the mutant 
-\begin_inset Formula $a_{\mathrm{f}}$
-\end_inset
-
--allele:
-\begin_inset Formula 
-\begin{align}
-w_{\mathrm{ff}} & =\frac{1}{2}t_{\mathrm{ff}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jff}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wff}\\
-w_{\mathrm{mf}} & =\frac{1}{2}t_{\mathrm{mf}}f\left(a_{\mathrm{f}}^{i}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{ff}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]\label{eq:af:wmf}\\
-w_{\mathrm{fm}} & =\frac{1}{2}t_{\mathrm{fm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}^{\mathrm{jfm}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{f}}s\left(a_{\mathrm{f}}\right)}+\frac{d_{\mathrm{f}}s\left(a_{\mathrm{f}}^{\mathrm{j}i}\right)}{f\left(a_{\mathrm{f}}\right)s\left(a_{\mathrm{f}}\right)}\right]\right.\nonumber \\
- & \left.+\left(1-\ell\right)\frac{s\left(a_{\mathrm{f}}^{\mathrm{j}i,\text{nonloc}}\right)}{s\left(a_{\mathrm{f}}\right)}\right\} \label{eq:af:wfm}\\
-w_{\mathrm{mm}} & =\frac{1}{2}t_{\mathrm{mm}}\frac{n_{\mathrm{f}}}{n_{\mathrm{m}}}\left\{ \ell f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left[\frac{n_{\mathrm{m}}\left(1-d_{\mathrm{m}}\right)}{n_{\mathrm{f}}\left[f\left(a_{\mathrm{f}}^{\mathrm{fm}}\right)\left(1-d_{\mathrm{m}}\right)+f\left(a_{\mathrm{f}}\right)d_{\mathrm{m}}\right]}+\frac{n_{\mathrm{m}}d_{\mathrm{m}}}{n_{\mathrm{f}}f\left(a_{\mathrm{f}}\right)}\right]+\left(1-\ell\right)\frac{n_{\mathrm{m}}}{n_{\mathrm{f}}}\right\} .\label{eq:af:wmm}
-\end{align}
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -1568,7 +2130,7 @@ Evolutionarily singular strategies
 \end_layout
 
 \begin_layout Subsubsection
-Age at maturity as a shared trait
+Well-mixed populations
 \end_layout
 
 \begin_layout Standard
@@ -1582,49 +2144,7 @@ To fix ideas, we first assess a `baseline' scenario in which populations
 \end_inset
 
 ).
- For an autosomal genetic trait expressed by juveniles, we obtain the result
- 
-\begin_inset Formula 
-\begin{align}
--\frac{s^{\prime}\left(a^{\star}\right)}{s\left(a^{\star}\right)} & =\frac{1}{2}\left(\frac{f^{\prime}\left(a^{\star}\right)}{f\left(a^{\star}\right)}+\frac{g^{\prime}\left(a^{\star}\right)}{g\left(a^{\star}\right)}\right),\label{eq:well_mixed:a:ESS}
-\end{align}
-
-\end_inset
-
-implying that the marginal decrease in juvenile survival 
-\begin_inset Formula $s$
-\end_inset
-
- (caused by a slightly higher age at maturity) must precisely balance the
- proportional increase in female fecundity 
-\begin_inset Formula $f(\cdot)$
-\end_inset
-
- and male virility 
-\begin_inset Formula $g(\cdot)$
-\end_inset
-
-.
- Note that even in haplodiploid systems, proportional increases in female
- fecundity and male virility are weighted equally (hence the scalar of 
-\begin_inset Formula $1/2$
-\end_inset
-
- on the right hand side).
- This is because
-\end_layout
-
-\begin_layout Standard
-Note that 
-\begin_inset Formula $1/2$
-\end_inset
-
- on the rhs reflects the notion that, at equilibrium,
-\end_layout
-
-\begin_layout Standard
-, while the right-hand size reflects the marginal gains of additional investment
- in 
+ We then have
 \begin_inset Formula 
 \begin{align}
 -\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:well_mixed:af:ES}\\
@@ -1671,14 +2191,15 @@ Solving
 \begin_inset Formula $\mathrm{d}w/\mathrm{d}a_{\mathrm{f}}=0$
 \end_inset
 
-, we obtain the following identity for the singular strategy 
-\begin_inset Formula $(a_{\mathrm{f}}^{\star})$
+, we obtain the following identity for the candidate evolutionarily stable
+ strategy 
+\begin_inset Formula $a_{\mathrm{f}}^{\star}$
 \end_inset
 
 : 
 \begin_inset Formula 
 \begin{align}
--\frac{1}{2}\left[r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}-h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{fjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right)\right]\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\nonumber \\
+-\frac{1}{2}\left[r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}-h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\text{local juv,f}}+\ell r_{\mathrm{m}\rightarrow\text{local juv,f}}\right)\right]\frac{s^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{s\left(a_{\mathrm{f}}^{\star}\right)} & =\nonumber \\
 \left[r_{\mathrm{f}}^{i}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}-\frac{1}{2}\left(h_{\mathrm{f}}^{2}+h_{\mathrm{m}}^{2}\right)\left(r_{\mathrm{f}\rightarrow\mathrm{f}}+r_{\mathrm{f}\rightarrow\mathrm{m}}\right)\right]\frac{f^{\prime}\left(a_{\mathrm{f}}^{\star}\right)}{f\left(a_{\mathrm{f}}^{\star}\right)}\label{eq:supplement:af_ES}
 \end{align}
 
@@ -1688,7 +2209,7 @@ Now we substitute on the first line in the equation above for
 \begin_inset Formula 
 \begin{align}
 r_{\mathrm{f}\rightarrow\text{self juv}} & =r_{\mathrm{f}\rightarrow\text{own juv},\mathrm{f}}+r_{\mathrm{m}\rightarrow\text{own juv},\mathrm{f}}\label{eq:supplement:ES:rfselfjuv}\\
-r_{\mathrm{f}\rightarrow\text{competing juv,f}} & =h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\mathrm{fjuv}}+\ell r_{\mathrm{m}\rightarrow\mathrm{fjuv}}\right),\label{eq:supplement:ES:rfcompetingjuv}
+r_{\mathrm{f}\rightarrow\text{competing juv,f}} & =h_{\mathrm{f}}^{2}\left(r_{\mathrm{f}\rightarrow\text{local juv,f}}+\ell r_{\mathrm{m}\rightarrow\text{local juv,f}}\right),\label{eq:supplement:ES:rfcompetingjuv}
 \end{align}
 
 \end_inset
@@ -1700,8 +2221,8 @@ where the first line reflects relatedness of the focal allele to itself
  On the right-hand side, we substitute for
 \begin_inset Formula 
 \begin{align}
-r_{\mathrm{f}\rightarrow\text{own offspring}} & =r_{\mathrm{f}}^{i}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\label{eq:supplement:ES:rfownoffspring}\\
-r_{\mathrm{f}\rightarrow\text{competing offspring}} & =\frac{1}{2}\left(h_{\mathrm{f}}^{2}+h_{\mathrm{m}}^{2}\right)\left(r_{\mathrm{f}\rightarrow\mathrm{f}}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\right),\label{eq:supplement:ES:rfcompetingoffspring}
+r_{\mathrm{f}\rightarrow\text{own young}} & =r_{\mathrm{f}}^{i}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\label{eq:supplement:ES:rfownoffspring}\\
+r_{\mathrm{f}\rightarrow\text{competing young}} & =\frac{1}{2}\left(h_{\mathrm{f}}^{2}+h_{\mathrm{m}}^{2}\right)\left(r_{\mathrm{f}\rightarrow\mathrm{f}}+\ell r_{\mathrm{f}\rightarrow\mathrm{m}}\right),\label{eq:supplement:ES:rfcompetingoffspring}
 \end{align}
 
 \end_inset
