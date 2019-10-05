@@ -8,6 +8,7 @@ library("RColorBrewer")
 
 # plot conflicts out in a contour plot
 
+# read in data and create subset
 if (!exists("the.data.long"))
 {
     the.data <- read.table("battleground_data_vary_df_nf.csv"
